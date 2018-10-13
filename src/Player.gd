@@ -7,6 +7,9 @@ var anim = ""
 
 onready var sprite = $Sprite
 
+func _ready():
+	$LightAnimation.play("glow")
+
 func _physics_process(delta):
 	control(delta)
 	move_and_slide(velocity)
