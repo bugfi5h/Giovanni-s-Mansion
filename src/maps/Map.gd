@@ -31,12 +31,12 @@ func set_camera_limits():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if  $Player.position.x< 8:
-		$Player.position.x = 8
+	if  $Player.position.x < left_limit + 8 :
+		$Player.position.x = left_limit + 8 
 	if $Player.position.x + 8 > right_limit:
 		$Player.position.x = right_limit - 8
-	if $Player.position.y < 8:
-		$Player.position.y = 8
+	if $Player.position.y < top_limit + 8:
+		$Player.position.y = top_limit + 8
 	if $Player.position.y + 8 > bottom_limit:
 		$Player.position.y = bottom_limit - 8
 		
