@@ -10,7 +10,8 @@ extends Node
 #	# Update game logic here.
 #	pass
 
-var tile_size = Vector2(128,128)
+export(Vector2) var tile_size = Vector2(16,16)
+export(String) var file_path = "res://terrain/terrain_tiles.tres"
 onready var texture = $Sprite.texture
 
 
@@ -25,5 +26,4 @@ func _ready():
 			ts.create_tile(id)
 			ts.tile_set_texture(id,texture)
 			ts.tile_set_region(id, region)
-	ResourceSaver.save("res://terrain/terrain_tiles.tres", ts)
-	pass
+	ResourceSaver.save(file_path, ts)

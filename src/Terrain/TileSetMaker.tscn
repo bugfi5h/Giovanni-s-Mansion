@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Terrain/TileSetMaker.gd" type="Script" id=1]
-[ext_resource path="res://assets/terrainTiles_retina.png" type="Texture" id=2]
+[ext_resource path="res://assets/dungeon/tiles.png" type="Texture" id=2]
 
-[node name="TileSetMaker" type="Node" index="0"]
-
+[node name="TileSetMaker" type="Node"]
 script = ExtResource( 1 )
+tile_size = Vector2( 16, 16 )
+file_path = "res://assets/dungeon/dungeon.tres"
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-
 

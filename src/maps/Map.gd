@@ -41,3 +41,8 @@ func _process(delta):
 		$Player.position.y = bottom_limit - 8
 		
 #	pass
+
+
+func _on_Area2D_body_entered(body):
+	if(body == $Player):
+		$Wall.move_wall();
