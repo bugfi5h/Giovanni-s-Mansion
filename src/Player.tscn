@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/link.png" type="Texture" id=2]
-[ext_resource path="res://assets/fogoflight.png" type="Texture" id=3]
+[ext_resource path="res://assets/light.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -195,9 +195,9 @@ enabled = true
 editor_only = false
 texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
-texture_scale = 0.7
+texture_scale = 0.5
 color = Color( 1, 1, 1, 1 )
-energy = 1.40406
+energy = 1.42263
 mode = 2
 range_height = 0.0
 range_z_min = -1024
