@@ -2,7 +2,7 @@
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/link.png" type="Texture" id=2]
-[ext_resource path="res://assets/Light.png" type="Texture" id=3]
+[ext_resource path="res://assets/light.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -131,11 +131,11 @@ collision_mask = 1
 collision/safe_margin = 0.08
 motion/sync_to_physics = false
 script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Visibility" ]
 __meta__ = {
 "_edit_horizontal_guides_": [ 6.3744 ],
 "_edit_vertical_guides_": [ -3.65759 ]
 }
-lamp_health = 100
 lamp_decrease = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -217,7 +217,7 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 3
-_sections_unfolded = [ "Shadow", "Visibility" ]
+_sections_unfolded = [ "Shadow", "Visibility", "texture" ]
 
 [node name="LampTimer" type="Timer" parent="."]
 process_mode = 1

@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasModulate
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -46,3 +46,10 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	if(body == $Player):
 		$Wall.move_wall();
+
+
+func _on_Lamp_lamp_oil_collected(lamp, body):
+	if body == $Player:
+		$Player.add_lamp_health(lamp.lamp_oil_amount)
+		lamp.collected()
+	print("Amount: " + String(lamp.lamp_oil_amount))

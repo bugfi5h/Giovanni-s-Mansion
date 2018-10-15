@@ -1,7 +1,9 @@
 extends "res://characters/Character.gd"
 
-export(int) var lamp_health = 100
+var lamp_health = 100
 export(int) var lamp_decrease = 1
+const max_lamp_health = 100;
+var start_texture_scale
 var velocity = Vector2()
 const max_speed = 200
 
@@ -11,6 +13,7 @@ onready var sprite = $Sprite
 
 func _ready():
 	$LightAnimation.play("glow")
+	start_texture_scale = $Lamp.texture_scale
 
 func _physics_process(delta):
 	control(delta)
@@ -49,9 +52,15 @@ func _on_LampTimer_timeout():
 	lamp_health = lamp_health - lamp_decrease
 	update_lamp()
 	
+func add_lamp_health(amount):
+	lamp_health = min(lamp_health + amount, max_lamp_health)
+	update_lamp()
+	print(lamp_health)
+	
 func update_lamp():
-	var lamp_light = max(0.3 * (lamp_health / 100.0), 0)
+	var lamp_light = max(start_texture_scale * (lamp_health / 100.0), 0)
 	$Lamp.texture_scale = lamp_light
+	print("Lamp Status: " + String(lamp_health))
 	if(lamp_light <= 0):
 		print("Game Over")
 		

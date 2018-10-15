@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/dungeon/dungeon.tres" type="TileSet" id=2]
 [ext_resource path="res://walls/Moveablewall.gd" type="Script" id=3]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=5]
+[ext_resource path="res://collectables/Lamp.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -100,7 +101,7 @@ _sections_unfolded = [ "Visibility", "occluder" ]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 580.998, 208.506 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="."]
 input_pickable = true
@@ -118,4 +119,9 @@ shape = SubResource( 3 )
 [node name="Wrath" parent="Area2D" instance=ExtResource( 5 )]
 position = Vector2( 642.15, 151.104 )
 
+[node name="Lamp" parent="." instance=ExtResource( 6 )]
+position = Vector2( 472.224, 198.982 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="lamp_oil_collected" from="Lamp" to="." method="_on_Lamp_lamp_oil_collected"]
