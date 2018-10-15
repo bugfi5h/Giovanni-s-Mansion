@@ -12,6 +12,7 @@ func _ready():
 	set_limits()
 	set_camera_limits()
 	$TileSetAnimator.play("BlueSpring")
+	color = Color("#000000")
 	pass
 
 func set_limits():
@@ -43,14 +44,17 @@ func _process(delta):
 		
 #	pass
 
-
-func _on_Area2D_body_entered(body):
-	if(body == $Player):
-		$Wall.move_wall();
-
-
 func _on_Lamp_lamp_oil_collected(lamp, body):
 	if body == $Player:
 		$Player.add_lamp_health(lamp.lamp_oil_amount)
 		lamp.collected()
 	print("Amount: " + String(lamp.lamp_oil_amount))
+
+func _on_Player_lamp_health_changed(lamp_health):
+	$UI.update_oil(lamp_health)
+
+
+func _on_PressurePlate_body_entered(body, pushed):
+	if(body == $Player):
+		var mirrored = !pushed
+		$Wall.move_wall(mirrored);

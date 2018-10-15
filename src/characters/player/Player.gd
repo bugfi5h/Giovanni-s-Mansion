@@ -1,5 +1,7 @@
 extends "res://characters/Character.gd"
 
+signal lamp_health_changed
+
 var lamp_health = 100
 export(int) var lamp_decrease = 1
 const max_lamp_health = 100;
@@ -60,7 +62,7 @@ func add_lamp_health(amount):
 func update_lamp():
 	var lamp_light = max(start_texture_scale * (lamp_health / 100.0), 0)
 	$Lamp.texture_scale = lamp_light
-	print("Lamp Status: " + String(lamp_health))
+	emit_signal("lamp_health_changed", lamp_health)
 	if(lamp_light <= 0):
 		print("Game Over")
 		

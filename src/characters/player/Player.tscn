@@ -4,11 +4,10 @@
 [ext_resource path="res://assets/link.png" type="Texture" id=2]
 [ext_resource path="res://assets/light.png" type="Texture" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
-radius = 10.2098
-height = 8.48627
+extents = Vector2( 7.839, 3.51286 )
 
 [sub_resource type="Animation" id=2]
 
@@ -139,7 +138,8 @@ __meta__ = {
 lamp_decrease = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+position = Vector2( -0.270554, 7.84601 )
+shape = SubResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 1
@@ -195,7 +195,7 @@ blend_times = [  ]
 
 [node name="Lamp" type="Light2D" parent="."]
 light_mask = 2
-position = Vector2( -3.87646, 6.71527 )
+position = Vector2( -3.63863, 6.71527 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
@@ -217,7 +217,7 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 3
-_sections_unfolded = [ "Shadow", "Visibility", "texture" ]
+_sections_unfolded = [ "Shadow", "Visibility" ]
 
 [node name="LampTimer" type="Timer" parent="."]
 process_mode = 1
