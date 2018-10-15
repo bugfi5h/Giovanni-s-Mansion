@@ -11,6 +11,7 @@ var bottom_limit = 0
 func _ready():
 	set_limits()
 	set_camera_limits()
+	$TileSetAnimator.play("BlueSpring")
 	pass
 
 func set_limits():
