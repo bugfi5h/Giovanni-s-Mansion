@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/link.png" type="Texture" id=2]
 [ext_resource path="res://assets/light.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 7.839, 3.51286 )
@@ -136,10 +136,11 @@ __meta__ = {
 "_edit_vertical_guides_": [ -3.65759 ]
 }
 lamp_decrease = 1
+lamp_timer_in_seconds = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.270554, 7.84601 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 1
@@ -223,6 +224,6 @@ _sections_unfolded = [ "Shadow", "Visibility" ]
 process_mode = 1
 wait_time = 1.0
 one_shot = false
-autostart = true
+autostart = false
 
 [connection signal="timeout" from="LampTimer" to="." method="_on_LampTimer_timeout"]

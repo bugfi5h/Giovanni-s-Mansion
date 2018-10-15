@@ -4,6 +4,7 @@ signal lamp_health_changed
 
 var lamp_health = 100
 export(int) var lamp_decrease = 1
+export(int) var lamp_timer_in_seconds = 3
 const max_lamp_health = 100;
 var start_texture_scale
 var velocity = Vector2()
@@ -16,6 +17,8 @@ onready var sprite = $Sprite
 func _ready():
 	$LightAnimation.play("glow")
 	start_texture_scale = $Lamp.texture_scale
+	$LampTimer.wait_time = lamp_timer_in_seconds
+	$LampTimer.start()
 
 func _physics_process(delta):
 	control(delta)

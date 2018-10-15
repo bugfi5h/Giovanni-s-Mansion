@@ -12,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 2.3576, 72.2087 )
+extents = Vector2( 4.98004, 72.01 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 
@@ -21,7 +21,7 @@ cull_mode = 0
 polygon = PoolVector2Array( -1, 144, -1, 0, 1, 0, 1, 144 )
 _sections_unfolded = [ "polygon" ]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource_name = "BlueSpring"
 length = 0.5
@@ -92,11 +92,6 @@ moving_dir = 0
 movement_in_px = 16
 movement_duration = 0.2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2( -2.45886, 72 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
 [node name="WallTiles" type="TileMap" parent="Wall"]
 mode = 0
 tile_set = ExtResource( 2 )
@@ -116,6 +111,11 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 65535, 71, 0, 0, 72, 0, 131071, 71, 0, 65536, 72, 0, 196607, 71, 0, 131072, 72, 0, 262143, 71, 0, 196608, 72, 0, 327679, 71, 0, 262144, 72, 0, 393215, 71, 0, 327680, 72, 0, 458751, 71, 0, 393216, 72, 0, 524287, 71, 0, 458752, 72, 0, 589823, 71, 0, 524288, 72, 0 )
 _sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2( 0.0424194, 71.9489 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Tween" type="Tween" parent="Wall"]
 repeat = false
@@ -147,7 +147,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/BlueSpring = SubResource( 4 )
+anims/BlueSpring = SubResource( 3 )
 blend_times = [  ]
 
 [node name="UI" parent="." instance=ExtResource( 8 )]
