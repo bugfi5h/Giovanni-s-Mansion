@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export(int) var lamp_health = 100
 var velocity = Vector2()
 const max_speed = 200
 
@@ -25,7 +26,6 @@ func control(delta):
 		velocity = Vector2(-max_speed,0)
 	if Input.is_action_pressed('move_right'):
 		velocity = Vector2(max_speed,0)
-
 	
 	### ANIMATION ###
 func play_animation():
@@ -44,3 +44,13 @@ func play_animation():
 		anim = new_anim
 		$AnimationPlayer.play(anim)
 	
+func _on_LampTimer_timeout():
+	lamp_health = lamp_health - 1
+	update_lamp()
+	
+func update_lamp():
+	var lamp_light = max(0.3 * (lamp_health / 100.0), 0)
+	$Lamp.texture_scale = lamp_light
+	if(lamp_light <= 0):
+		print("Game Over")
+		

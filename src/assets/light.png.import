@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Light.png-469780eafe5f73a115be91ab7ce512f3.stex"
+path="res://.import/light.png-87539b10c4b4cebc046b6b91ffea6f69.stex"
 
 [deps]
 
-source_file="res://assets/Light.png"
-dest_files=[ "res://.import/Light.png-469780eafe5f73a115be91ab7ce512f3.stex" ]
+source_file="res://assets/light.png"
+dest_files=[ "res://.import/light.png-87539b10c4b4cebc046b6b91ffea6f69.stex" ]
 
 [params]
 

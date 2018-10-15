@@ -112,7 +112,7 @@ length = 8.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Light2D:energy")
+tracks/0/path = NodePath("Lamp:energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -131,6 +131,11 @@ collision_mask = 1
 collision/safe_margin = 0.08
 motion/sync_to_physics = false
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 6.3744 ],
+"_edit_vertical_guides_": [ -3.65759 ]
+}
+lamp_health = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -189,13 +194,14 @@ playback_speed = 1.0
 anims/glow = SubResource( 7 )
 blend_times = [  ]
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Lamp" type="Light2D" parent="."]
 light_mask = 2
+position = Vector2( -3.87646, 6.71527 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
-texture_scale = 0.5
+texture_scale = 0.3
 color = Color( 1, 1, 1, 1 )
 energy = 1.42136
 mode = 2
@@ -214,3 +220,10 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 3
 _sections_unfolded = [ "Shadow", "Visibility" ]
 
+[node name="LampTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="LampTimer" to="." method="_on_LampTimer_timeout"]
