@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/dungeon/dungeon.tres" type="TileSet" id=2]
 [ext_resource path="res://walls/Moveablewall.gd" type="Script" id=3]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -113,5 +114,8 @@ audio_bus_name = "Master"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 639.598, 89.9142 )
 shape = SubResource( 3 )
+
+[node name="Wrath" parent="Area2D" instance=ExtResource( 5 )]
+position = Vector2( 642.15, 151.104 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

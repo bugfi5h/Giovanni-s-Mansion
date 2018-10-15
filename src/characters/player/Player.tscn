@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/link.png" type="Texture" id=2]
 [ext_resource path="res://assets/Light.png" type="Texture" id=3]
 
@@ -136,9 +136,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ -3.65759 ]
 }
 lamp_health = 100
+lamp_decrease = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -182,7 +182,6 @@ blend_times = [  ]
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 8
-frame = 1
 _sections_unfolded = [ "Animation", "Region", "texture" ]
 
 [node name="LightAnimation" type="AnimationPlayer" parent="."]

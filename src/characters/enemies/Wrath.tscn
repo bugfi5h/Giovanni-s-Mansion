@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://characters/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Wrath.gd" type="Script" id=2]
+[ext_resource path="res://assets/Wraith.png" type="Texture" id=3]
+[ext_resource path="res://assets/light.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 11.9973
+height = 31.1355
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "idle"
+length = 0.6
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[node name="Wrath" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+vframes = 5
+hframes = 4
+frame = 1
+_sections_unfolded = [ "Animation" ]
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="SpriteAnimations" parent="." index="2"]
+anims/idle = SubResource( 2 )
+
+[node name="Eyelight" type="Light2D" parent="." index="3"]
+position = Vector2( -1.00737, -16.2137 )
+scale = Vector2( 0.0307725, 0.017146 )
+enabled = true
+editor_only = false
+texture = ExtResource( 4 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 0.5
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+

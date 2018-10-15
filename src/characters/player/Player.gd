@@ -1,6 +1,7 @@
-extends KinematicBody2D
+extends "res://characters/Character.gd"
 
 export(int) var lamp_health = 100
+export(int) var lamp_decrease = 1
 var velocity = Vector2()
 const max_speed = 200
 
@@ -45,7 +46,7 @@ func play_animation():
 		$AnimationPlayer.play(anim)
 	
 func _on_LampTimer_timeout():
-	lamp_health = lamp_health - 1
+	lamp_health = lamp_health - lamp_decrease
 	update_lamp()
 	
 func update_lamp():
