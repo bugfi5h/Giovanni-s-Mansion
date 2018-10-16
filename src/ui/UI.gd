@@ -14,3 +14,7 @@ func update_oil(amount):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Player_lamp_health_changed(amount):
+	update_oil(amount)

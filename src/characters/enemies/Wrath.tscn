@@ -5,12 +5,11 @@
 [ext_resource path="res://assets/images/Wraith.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/light.png" type="Texture" id=4]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 11.9973
-height = 31.1355
+radius = 2.27222
+height = 14.3643
 
 [sub_resource type="Animation" id=2]
 
@@ -33,22 +32,26 @@ tracks/0/keys = {
 
 [node name="Wrath" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+speed = 150
 
 [node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
 vframes = 5
 hframes = 4
 frame = 1
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, 5.83823 )
 shape = SubResource( 1 )
 
 [node name="SpriteAnimations" parent="." index="2"]
 anims/idle = SubResource( 2 )
 
 [node name="Eyelight" type="Light2D" parent="." index="3"]
-position = Vector2( -1.00737, -16.2137 )
+position = Vector2( -0.72258, -11.5146 )
 scale = Vector2( 0.0307725, 0.017146 )
 enabled = true
 editor_only = false
@@ -72,3 +75,10 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 
+[node name="NewPath" type="Timer" parent="." index="4"]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="NewPath" to="." method="_on_NewPath_timeout"]

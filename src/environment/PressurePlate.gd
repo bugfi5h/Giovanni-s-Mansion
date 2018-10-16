@@ -1,11 +1,13 @@
 extends Node2D
 
-signal body_entered
+signal pressure_plate_pushed(is_pushed_in)
 
 export(Texture) var unpushed_state
 export(Texture) var pushed_state
 export(bool) var only_activation = false
 export(bool) var pushed = false
+var player_class = preload("res://characters/player/Player.gd")
+
 var first_state
 
 
@@ -23,13 +25,14 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	if only_activation:
-		if first_state != pushed:
-			return
-	if pushed:
-		$Sprite.texture = unpushed_state
-		pushed = false
-	else:
-		$Sprite.texture = pushed_state
-		pushed = true
-	emit_signal("body_entered", body, pushed)
+	if(body is player_class):
+		if only_activation:
+			if first_state != pushed:
+				return
+		if pushed:
+			$Sprite.texture = unpushed_state
+			pushed = false
+		else:
+			$Sprite.texture = pushed_state
+			pushed = true
+		emit_signal("pressure_plate_pushed", pushed)

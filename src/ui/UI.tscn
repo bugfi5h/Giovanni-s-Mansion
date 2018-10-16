@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/images/lamp.png" type="Texture" id=2]
 [ext_resource path="res://ui/Comfortaa-Bold.ttf" type="DynamicFontData" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
 
 size = 28
@@ -93,6 +92,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
+stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
 [node name="OilPercent" type="Label" parent="MarginContainer/HBoxContainer/Oil"]

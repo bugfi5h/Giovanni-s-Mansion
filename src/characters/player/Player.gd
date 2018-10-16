@@ -1,6 +1,6 @@
 extends "res://characters/Character.gd"
 
-signal lamp_health_changed
+signal lamp_health_changed(amount)
 
 var lamp_health = 100
 export(int) var lamp_decrease = 1
@@ -9,6 +9,8 @@ const max_lamp_health = 100;
 var start_texture_scale
 var velocity = Vector2()
 const max_speed = 200
+
+signal player_moved(pos)
 
 var anim = ""
 
@@ -24,6 +26,7 @@ func _physics_process(delta):
 	control(delta)
 	move_and_slide(velocity)
 	play_animation()
+	emit_signal("player_moved", position)
 
 func control(delta):
 	velocity = Vector2()

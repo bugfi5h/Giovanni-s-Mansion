@@ -1,7 +1,7 @@
 extends Node2D
 
-signal lamp_oil_collected
 export(int) var lamp_oil_amount = 1
+var collected = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -10,8 +10,19 @@ func _ready():
 #func _process(delta):
 #	pass
 func collected():
-	#do some fancy animation
-	queue_free()
+	$Label.text = "+" + String(lamp_oil_amount)
+	$lamp.hide()
+	$AnimationPlayer.play("Collected")
 
 func _on_Area2D_body_entered(body):
-	emit_signal("lamp_oil_collected", $".", body)
+	if !collected:
+		collected = true
+		var player_class = load("res://characters/player/Player.gd")
+		if body is player_class:
+			body.add_lamp_health(lamp_oil_amount)
+			collected()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Collected":
+		queue_free()

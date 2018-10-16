@@ -12,11 +12,12 @@ func _ready():
 	set_limits()
 	set_camera_limits()
 	color = Color("#000000")
+	$Wrath.nav = $Nav
 	pass
 
 func set_limits():
-	var map_limits = $Ground.get_used_rect() 
-	var map_cellsize = $Ground.cell_size
+	var map_limits = $Nav/Ground.get_used_rect() 
+	var map_cellsize = $Nav/Ground.cell_size
 	
 	left_limit = map_limits.position.x * map_cellsize.x
 	right_limit = map_limits.end.x * map_cellsize.x
@@ -42,18 +43,3 @@ func _process(delta):
 		$Player.position.y = bottom_limit - 8
 		
 #	pass
-
-func _on_Lamp_lamp_oil_collected(lamp, body):
-	if body == $Player:
-		$Player.add_lamp_health(lamp.lamp_oil_amount)
-		lamp.collected()
-	print("Amount: " + String(lamp.lamp_oil_amount))
-
-func _on_Player_lamp_health_changed(lamp_health):
-	$UI.update_oil(lamp_health)
-
-
-func _on_PressurePlate_body_entered(body, pushed):
-	if(body == $Player):
-		var mirrored = !pushed
-		$Wall.move_wall(mirrored);
