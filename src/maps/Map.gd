@@ -16,8 +16,8 @@ func _ready():
 	pass
 
 func set_limits():
-	var map_limits = $Nav/Ground.get_used_rect() 
-	var map_cellsize = $Nav/Ground.cell_size
+	var map_limits = $Ground.get_used_rect() 
+	var map_cellsize = $Ground.cell_size
 	
 	left_limit = map_limits.position.x * map_cellsize.x
 	right_limit = map_limits.end.x * map_cellsize.x
@@ -43,3 +43,10 @@ func _process(delta):
 		$Player.position.y = bottom_limit - 8
 		
 #	pass
+
+
+func _on_Wall_set_tiles(coordinates, id):
+	var map = $Nav/CollsionsAndNavigation
+	for coordinate in coordinates:
+		var tile = map.world_to_map(coordinate)
+		map.set_cell(tile.x, tile.y, id)
