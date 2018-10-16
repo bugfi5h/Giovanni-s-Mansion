@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wraith.png-7d10882accaa9d496831df65d2e79450.stex"
+path="res://.import/pressurePlate_Pushed.png-f90b8c14d7c1f06a67e1cf05aef8a2a6.stex"
 
 [deps]
 
-source_file="res://assets/Wraith.png"
-dest_files=[ "res://.import/Wraith.png-7d10882accaa9d496831df65d2e79450.stex" ]
+source_file="res://assets/images/pressurePlate_Pushed.png"
+dest_files=[ "res://.import/pressurePlate_Pushed.png-f90b8c14d7c1f06a67e1cf05aef8a2a6.stex" ]
 
 [params]
 

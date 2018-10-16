@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Terrain/TileSetMaker.gd" type="Script" id=1]
-[ext_resource path="res://assets/dungeon/tiles.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/dungeon/tiles.png" type="Texture" id=2]
+
 
 [node name="TileSetMaker" type="Node"]
 script = ExtResource( 1 )

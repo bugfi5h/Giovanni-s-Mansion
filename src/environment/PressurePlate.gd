@@ -4,14 +4,14 @@ signal body_entered
 
 export(Texture) var unpushed_state
 export(Texture) var pushed_state
+export(bool) var only_activation = false
 export(bool) var pushed = false
+var first_state
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	first_state = pushed
 	if pushed:
 		$Sprite.texture = pushed_state
 	else:
@@ -23,6 +23,9 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
+	if only_activation:
+		if first_state != pushed:
+			return
 	if pushed:
 		$Sprite.texture = unpushed_state
 		pushed = false

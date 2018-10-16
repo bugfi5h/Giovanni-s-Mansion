@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Giovanni's Mansion"
 run/main_scene="res://maps/Map.tscn"
-config/icon="res://assets/icon.png"
+config/icon="res://assets/images/icon.png"
 
 [importer_defaults]
 

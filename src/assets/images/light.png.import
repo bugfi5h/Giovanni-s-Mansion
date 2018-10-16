@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tiles.png-6100087fd0fe8f8792b9ab1936636b10.stex"
+path="res://.import/light.png-55db755c31f5ce99c3f94316b7ed776a.stex"
 
 [deps]
 
-source_file="res://assets/dungeon/tiles.png"
-dest_files=[ "res://.import/tiles.png-6100087fd0fe8f8792b9ab1936636b10.stex" ]
+source_file="res://assets/images/light.png"
+dest_files=[ "res://.import/light.png-55db755c31f5ce99c3f94316b7ed776a.stex" ]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/link.png" type="Texture" id=2]
-[ext_resource path="res://assets/light.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/link.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/light.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -201,7 +201,7 @@ enabled = true
 editor_only = false
 texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
-texture_scale = 0.3
+texture_scale = 0.5
 color = Color( 1, 1, 1, 1 )
 energy = 1.42136
 mode = 2

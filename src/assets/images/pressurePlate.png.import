@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pressurePlate_Pushed.png-700bf3aab0bf4096c786e60d5a58fcfc.stex"
+path="res://.import/pressurePlate.png-ee1b1a7a512e98abbe6cb7e2613740f4.stex"
 
 [deps]
 
-source_file="res://assets/pressurePlate_Pushed.png"
-dest_files=[ "res://.import/pressurePlate_Pushed.png-700bf3aab0bf4096c786e60d5a58fcfc.stex" ]
+source_file="res://assets/images/pressurePlate.png"
+dest_files=[ "res://.import/pressurePlate.png-ee1b1a7a512e98abbe6cb7e2613740f4.stex" ]
 
 [params]
 

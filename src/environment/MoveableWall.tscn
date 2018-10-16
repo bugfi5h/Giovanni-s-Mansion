@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://environment/Moveablewall.gd" type="Script" id=1]
+
+[node name="Wall" type="Node2D"]
+script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+moving_dir = 0
+movement_in_px = 16
+movement_duration = 0.2
+
+[node name="Tween" type="Tween" parent="."]
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
