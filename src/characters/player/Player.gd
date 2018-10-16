@@ -30,15 +30,27 @@ func _physics_process(delta):
 
 func control(delta):
 	velocity = Vector2()
+	var direction = Vector2()
+
 	if Input.is_action_pressed('move_up'):
-		velocity = Vector2(0,-max_speed)
+		direction = Vector2(0,-1)
 	if Input.is_action_pressed('move_down'):
-		velocity = Vector2(0,max_speed)
+		direction = Vector2(0,1)
 	if Input.is_action_pressed('move_left'):
-		velocity = Vector2(-max_speed,0)
+		direction = Vector2(-1,0)
 	if Input.is_action_pressed('move_right'):
-		velocity = Vector2(max_speed,0)
+		direction = Vector2(1,0)
+
+	if Input.is_action_pressed('move_up') && Input.is_action_pressed('move_left'):
+		direction = Vector2(-0.707,-0.707)
+	if Input.is_action_pressed('move_up') && Input.is_action_pressed('move_right'):
+		direction = Vector2(0.707,-0.707)
+	if Input.is_action_pressed('move_down') && Input.is_action_pressed('move_left'):
+		direction = Vector2(-0.707,0.707)
+	if Input.is_action_pressed('move_down') && Input.is_action_pressed('move_right'):
+		direction = Vector2(0.707,0.707)
 	
+	velocity = direction*max_speed
 	### ANIMATION ###
 func play_animation():
 	var new_anim = "idle"
