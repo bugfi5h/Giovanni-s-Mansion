@@ -23,11 +23,17 @@ func game_over():
 	goto_scene("res://ui/GameOver.tscn")
 
 func goto_next_floor():
-	if(stages.count() > stage):
+	if(stages.size() > stage):
 		var path = stages[stage]
 		stage = stage + 1
 		goto_scene(path)
+	else:
+		handle_win()
 		
+
+func handle_win():
+	# TODO
+	pass
 
 func goto_scene(path):
     # This function will usually be called from a signal callback,
