@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/TileSet/NavigationMap.tres" type="TileSet" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=7]
 [ext_resource path="res://collectables/Lamp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/sounds/GiovannisMansionMainTheme.wav" type="AudioStream" id=10]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -110,18 +109,6 @@ _sections_unfolded = [ "Visibility" ]
 lamp_oil_amount = 10
 
 [node name="UI" parent="." instance=ExtResource( 9 )]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( -1.89999, 5.69997 )
-stream = ExtResource( 10 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-stream_paused = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 
 [connection signal="set_tiles" from="Wall" to="." method="_on_Wall_set_tiles"]
 [connection signal="pressure_plate_pushed" from="PressurePlate" to="Wall" method="_on_PressurePlate_pressure_plate_pushed"]
