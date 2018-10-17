@@ -14,7 +14,6 @@ func _ready():
 	set_limits()
 	set_camera_limits()
 	color = Color("#000000")
-	$Wrath.nav = $Nav
 	pass
 
 func set_limits():

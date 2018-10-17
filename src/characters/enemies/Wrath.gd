@@ -14,7 +14,12 @@ var player_class = preload("res://characters/player/Player.gd")
 export(int) var damage = 3
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var parent = get_owner()
+	if parent != null :
+		nav = parent.get_node("Nav")
+		if nav != null:
+			print("done")
+			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

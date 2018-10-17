@@ -102,6 +102,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 [node name="Wrath" parent="." instance=ExtResource( 7 )]
 position = Vector2( 799.583, 270.587 )
 speed = 70
+damage = 1
 
 [node name="Lamp" parent="." instance=ExtResource( 8 )]
 position = Vector2( 472.224, 198.982 )
