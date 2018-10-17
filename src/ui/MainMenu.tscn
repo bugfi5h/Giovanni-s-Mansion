@@ -148,6 +148,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_colors/font_color_hover = Color( 0.929412, 0.396078, 0.396078, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -155,7 +156,7 @@ group = null
 text = "New Game"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Focus" ]
 
 [node name="Instructions" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 anchor_left = 0.0
@@ -169,12 +170,13 @@ rect_min_size = Vector2( 0, 26 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_top = NodePath("../New Game")
-focus_neighbour_bottom = NodePath(".")
+focus_neighbour_bottom = NodePath("../End")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_colors/font_color_hover = Color( 0.929412, 0.396078, 0.396078, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -182,7 +184,7 @@ group = null
 text = "Instructions"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Focus" ]
 
 [node name="End" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 anchor_left = 0.0
@@ -201,6 +203,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_colors/font_color_hover = Color( 0.929412, 0.396078, 0.396078, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -208,7 +211,7 @@ group = null
 text = "End"
 flat = false
 align = 1
-_sections_unfolded = [ "Focus", "Rect" ]
+_sections_unfolded = [ "Focus" ]
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 anchor_left = 0.0
