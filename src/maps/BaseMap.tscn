@@ -119,7 +119,7 @@ only_activation = true
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
-[node name="Audio" parent="." instance=ExtResource( 7 )]
+[node name="Audio" parent="." instance=ExtResource( 5 )]
 
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
 [connection signal="stamina_changed" from="Player" to="UI" method="_on_Player_stamina_changed"]
