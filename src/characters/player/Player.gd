@@ -73,6 +73,7 @@ func play_animation():
 func _set_oil_health(health):
 	lamp_health = health
 	update_lamp()
+	globals.player_oil = lamp_health
 	
 func _on_LampTimer_timeout():
 	_set_oil_health(lamp_health - lamp_decrease)
