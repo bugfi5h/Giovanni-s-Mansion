@@ -7,8 +7,10 @@ var left_limit = 0
 var right_limit = 0
 var top_limit = 0
 var bottom_limit = 0
+var globals
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	globals = get_node("/root/globals")
 	set_limits()
 	set_camera_limits()
 	color = Color("#000000")
@@ -24,7 +26,7 @@ func set_limits():
 	top_limit = map_limits.position.y * map_cellsize.y
 	bottom_limit = map_limits.end.y * map_cellsize.y
 
-##TODO
+
 func set_camera_limits():
 	$Player/Camera2D.limit_left = left_limit
 	$Player/Camera2D.limit_right = right_limit
@@ -43,7 +45,6 @@ func _process(delta):
 		$Player.position.y = bottom_limit - 8
 		
 #	pass
-
 
 func _on_Wall_set_tiles(coordinates, id):
 	var map = $Nav/CollsionsAndNavigation

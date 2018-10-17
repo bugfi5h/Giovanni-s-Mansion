@@ -19,6 +19,10 @@ config/name="Giovanni's Mansion"
 run/main_scene="res://maps/Map.tscn"
 config/icon="res://assets/images/icon.png"
 
+[autoload]
+
+globals="*res://global.gd"
+
 [importer_defaults]
 
 texture={
