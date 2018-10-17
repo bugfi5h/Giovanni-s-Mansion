@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
-[ext_resource path="res://environment/PressurePlate.tscn" type="PackedScene" id=2]
-[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://environment/PressurePlate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sounds/GiovannisMansionMainTheme.wav" type="AudioStream" id=5]
 
@@ -71,13 +71,51 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 
-[node name="PressurePlate" parent="." instance=ExtResource( 2 )]
-position = Vector2( 647.579, 295.726 )
-only_activation = true
+[node name="Wall" type="TileMap" parent="."]
+mode = 0
+tile_set = null
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 593.647, 263.408 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="Roof" type="TileMap" parent="."]
+mode = 0
+tile_set = null
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+
+[node name="PressurePlate" parent="." instance=ExtResource( 3 )]
+position = Vector2( 647.579, 295.726 )
+only_activation = true
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
