@@ -137,6 +137,10 @@ __meta__ = {
 }
 lamp_decrease = 1
 lamp_timer_in_seconds = 3
+stamina_decrease = 1
+stamina_restoration = 5
+max_speed = 100
+max_sprint_speed = 250
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.0277668, 7.84601 )
@@ -227,4 +231,11 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="StaminaRestorationTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [connection signal="timeout" from="LampTimer" to="." method="_on_LampTimer_timeout"]
+[connection signal="timeout" from="StaminaRestorationTimer" to="." method="_on_StaminaRestorationTimer_timeout"]

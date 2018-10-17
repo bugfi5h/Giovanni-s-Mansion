@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://ui/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://ui/WinScreen.gd" type="Script" id=1]
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="WinScreen" type="CanvasLayer"]
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -21,7 +21,6 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Margin" ]
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
 anchor_left = 0.0
@@ -43,24 +42,26 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 432.0
-margin_top = 272.0
-margin_right = 591.0
-margin_bottom = 328.0
+margin_left = 396.0
+margin_top = 275.0
+margin_right = 628.0
+margin_bottom = 324.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 15
 alignment = 0
+_sections_unfolded = [ "custom_constants" ]
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 159.0
+margin_right = 232.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -68,60 +69,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Game Over"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 18.0
-margin_right = 159.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 91.0
-margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Highest Stage:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Stage" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 95.0
-margin_right = 95.0
-margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+text = "Congratulations! You found the Pizza"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -131,15 +79,16 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 36.0
-margin_right = 159.0
-margin_bottom = 56.0
+margin_left = 36.0
+margin_top = 29.0
+margin_right = 195.0
+margin_bottom = 49.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 4
 size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
@@ -148,5 +97,6 @@ group = null
 text = "Back to the Main Menu"
 flat = false
 align = 1
+_sections_unfolded = [ "Grow Direction", "Size Flags" ]
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
