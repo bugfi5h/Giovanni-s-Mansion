@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://environment/PressurePlate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://audio/MansionAudioPlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=6]
 
 [node name="Map" type="CanvasModulate"]
 color = Color( 1, 1, 1, 1 )
@@ -120,6 +121,8 @@ only_activation = true
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
 [node name="Audio" parent="." instance=ExtResource( 5 )]
+
+[node name="PauseScreen" parent="." instance=ExtResource( 6 )]
 
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
 [connection signal="stamina_changed" from="Player" to="UI" method="_on_Player_stamina_changed"]
