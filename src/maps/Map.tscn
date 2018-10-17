@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/TileSet/NavigationMap.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/images/PathAndCollisionMap/NavigationMap.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/images/dungeon/dungeon_tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://environment/MoveableWall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/PressurePlate.tscn" type="PackedScene" id=5]
@@ -9,6 +9,7 @@
 [ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=7]
 [ext_resource path="res://collectables/Lamp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="OccluderPolygon2D" id=1]
 

@@ -1,0 +1,233 @@
+[gd_resource type="TileSet" load_steps=25 format=2]
+
+[ext_resource path="res://assets/images/PathAndCollisionMap/NoWalk.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/images/PathAndCollisionMap/Walk.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/images/PathAndCollisionMap/WallLeftRight.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/images/PathAndCollisionMap/WallUpDown.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/images/PathAndCollisionMap/DotLeft.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/images/PathAndCollisionMap/DotRight.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/images/PathAndCollisionMap/Corner.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/images/PathAndCollisionMap/CornerRight.jpg" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = PoolVector2Array( 8.27469, -7.73899, 8.27469, 8.26101, -7.72531, 8.26101, -7.72531, -7.73899 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -7.72531, -7.73899, -7.72531, 8.26101, 8.27469, 8.26101, 8.27469, -7.73899 ) ]
+
+[sub_resource type="NavigationPolygon" id=4]
+
+vertices = PoolVector2Array( 7.99285, 8.0274, -3, 8, -3, -8, 8, -8, 8, 8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
+outlines = [ PoolVector2Array( 7.99285, 8.0274, -3, 8, -3, -8, 8, -8, 8, 8 ) ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.5, 8.00019 )
+
+[sub_resource type="NavigationPolygon" id=5]
+
+vertices = PoolVector2Array( 8, -8, 8, 4, -8, 4, -8, -8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -8, -8, -8, 4, 8, 4, 8, -8 ) ]
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 2 )
+
+[sub_resource type="NavigationPolygon" id=8]
+
+vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -3, 4, -3, 8, -8, 4 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 0, 3, 5 ), PoolIntArray( 0, 0, 5 ) ]
+outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -3, 8, -3, 4, -8, 4, -8, -8 ) ]
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.5, 2 )
+
+[sub_resource type="NavigationPolygon" id=9]
+
+vertices = PoolVector2Array( -8, -8, 8, -8, 8, 4, 3, 4, -8, 8, 3, 8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ) ]
+outlines = [ PoolVector2Array( -8, -8, -8, 8, 3, 8, 3, 4, 8, 4, 8, -8 ) ]
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.5, 2 )
+
+[sub_resource type="NavigationPolygon" id=11]
+
+vertices = PoolVector2Array( 8, -8, 8, 4, -3, 4, -3, -8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -3, -8, -3, 4, 8, 4, 8, -8 ) ]
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( -8, -8, -3, -8, -3, 4, -8, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 8, 8, -8, 8, -3, 4, 8, 4 )
+
+[sub_resource type="NavigationPolygon" id=12]
+
+vertices = PoolVector2Array( 3, -8, 3, 4, -8, 4, -8, -8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -8, -8, -8, 4, 3, 4, 3, -8 ) ]
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 3, 4, 3, -8, 8, -8, 8, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 3, 4, 8, 8, -8, 8, -8, 4 )
+
+[resource]
+
+0/name = "NoWalk"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 8, 8 )
+0/navigation_offset = Vector2( 8, 8 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+0/z_index = 0
+1/name = "Walk"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 8, 8 )
+1/navigation_offset = Vector2( 8, 8 )
+1/navigation = SubResource( 2 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "WallLeftRight"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 8, 8 )
+2/navigation_offset = Vector2( 8, 8 )
+2/navigation = SubResource( 4 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 2.5, 8 )
+} ]
+2/z_index = 0
+3/name = "WallUpDown"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 8, 8 )
+3/navigation_offset = Vector2( 8, 8 )
+3/navigation = SubResource( 5 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 14 )
+} ]
+3/z_index = 0
+4/name = "DotLeft"
+4/texture = ExtResource( 5 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 8, 8 )
+4/navigation_offset = Vector2( 8, 8 )
+4/navigation = SubResource( 8 )
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 2.5, 14 )
+} ]
+4/z_index = 0
+5/name = "DotRight"
+5/texture = ExtResource( 6 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 8, 8 )
+5/navigation_offset = Vector2( 8, 8 )
+5/navigation = SubResource( 9 )
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 13.5, 14 )
+} ]
+5/z_index = 0
+6/name = "CornerLeft"
+6/texture = ExtResource( 7 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 8, 8 )
+6/navigation_offset = Vector2( 8, 8 )
+6/navigation = SubResource( 11 )
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+6/z_index = 0
+7/name = "CornerRight"
+7/texture = ExtResource( 8 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 8, 8 )
+7/navigation_offset = Vector2( 8, 8 )
+7/navigation = SubResource( 12 )
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+7/z_index = 0
+

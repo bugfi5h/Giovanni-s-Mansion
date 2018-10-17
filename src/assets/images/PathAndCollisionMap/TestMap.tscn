@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/images/TileSet/TestMap.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/TileSet/NavigationMap.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/images/PathAndCollisionMap/TestMap.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/PathAndCollisionMap/NavigationMap.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/images/dungeon/dungeon_tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/MoveableWall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/PressurePlate.tscn" type="PackedScene" id=7]
+
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
