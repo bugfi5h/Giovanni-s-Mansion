@@ -10,7 +10,7 @@ var stage = 0
 
 var current_scene = null
 
-var stages = ["res://maps/Map.tscn"]
+var stages = ["res://maps/level_1/Level_1.tscn"]
 
 func _ready():
         var root = get_tree().get_root()
