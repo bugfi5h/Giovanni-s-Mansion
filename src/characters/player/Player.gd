@@ -1,15 +1,22 @@
 extends "res://characters/Character.gd"
 
 signal lamp_health_changed(amount)
+signal stamina_changed(amount)
 signal player_moved(pos)
 
-var lamp_health = 100
 export(int) var lamp_decrease = 1
 export(int) var lamp_timer_in_seconds = 3
+export(int) var stamina_decrease = 1
+export(int) var stamina_restoration = 5
+export(int) var max_speed = 100
+export(int) var max_sprint_speed = 250
+
 const max_lamp_health = 100;
+var stamina = 100
+var lamp_health = 100
 var start_texture_scale
 var velocity = Vector2()
-const max_speed = 200
+
 
 var globals
 var anim = ""
@@ -21,8 +28,10 @@ func _ready():
 	$LightAnimation.play("glow")
 	start_texture_scale = $Lamp.texture_scale
 	_set_oil_health(globals.player_oil)
+	_set_stamina(globals.player_stamina)
 	$LampTimer.wait_time = lamp_timer_in_seconds
 	$LampTimer.start()
+	$StaminaRestorationTimer.start()
 
 func _physics_process(delta):
 	control(delta)
@@ -52,7 +61,11 @@ func control(delta):
 	if Input.is_action_pressed('move_down') && Input.is_action_pressed('move_right'):
 		direction = Vector2(0.707,0.707)
 	
-	velocity = direction*max_speed
+	if Input.is_action_pressed('sprint') && stamina > 0 && direction.length() > 0:
+		velocity = direction*max_sprint_speed
+		decrease_stamina(stamina_decrease)
+	else:
+		velocity = direction*max_speed
 	### ANIMATION ###
 func play_animation():
 	var new_anim = "idle"
@@ -90,4 +103,26 @@ func update_lamp():
 	emit_signal("lamp_health_changed", lamp_health)
 	if(lamp_light <= 0):
 		globals.game_over()
-		
+
+func decrease_stamina(amount):
+	_set_stamina(stamina - amount)
+	pass
+	
+func increase_stamina(amount):
+	_set_stamina(stamina + amount)
+	pass
+
+func _set_stamina(amount):
+	if amount < 0:
+		stamina = 0
+	elif amount > 100:
+		stamina = 100
+	else:
+		stamina = amount
+	
+	emit_signal("stamina_changed", stamina)
+	globals.player_stamina = stamina
+	pass;
+
+func _on_StaminaRestorationTimer_timeout():
+	increase_stamina(stamina_restoration)

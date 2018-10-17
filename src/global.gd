@@ -4,7 +4,8 @@ extends Node
 # var a = 2
 # var b = "text"
 
-var player_oil = 3
+var player_oil = 100
+var player_stamina = 100
 var stage = 0
 
 var current_scene = null
