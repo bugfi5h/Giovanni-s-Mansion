@@ -23,6 +23,11 @@ config/icon="res://assets/images/icon.png"
 
 globals="*res://global.gd"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [importer_defaults]
 
 texture={
