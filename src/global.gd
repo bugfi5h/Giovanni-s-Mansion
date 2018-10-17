@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "text"
 
-var player_oil = 100
+var player_oil = 3
 var stage = 0
 
 var current_scene = null
@@ -22,6 +22,10 @@ func game_over():
 	stage = 0
 	goto_scene("res://ui/GameOver.tscn")
 
+func goto_main_menu():
+	stage = 0
+	goto_scene("res://ui/MainMenu.tscn")
+
 func goto_next_floor():
 	if(stages.size() > stage):
 		var path = stages[stage]
@@ -32,7 +36,7 @@ func goto_next_floor():
 		
 
 func handle_win():
-	# TODO
+	goto_scene("res://ui/WinScreen.tscn")
 	pass
 
 func goto_scene(path):
