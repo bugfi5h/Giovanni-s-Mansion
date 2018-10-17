@@ -80,6 +80,9 @@ func _on_LampTimer_timeout():
 	
 func add_lamp_health(amount):
 	_set_oil_health(min(lamp_health + amount, max_lamp_health))
+
+func decrease_lamp_health(amount):
+	_set_oil_health(max(lamp_health - amount,0))
 	
 func update_lamp():
 	var lamp_light = max(start_texture_scale * (lamp_health / 100.0), 0)

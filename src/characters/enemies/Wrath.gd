@@ -1,4 +1,4 @@
-extends "res://characters/Character.gd"
+extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -9,6 +9,9 @@ var nav = null
 var path = []
 var goal = Vector2()
 var new_path = true
+var player = null
+var player_class = preload("res://characters/player/Player.gd")
+export(int) var damage = 3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -44,3 +47,17 @@ func _physics_process(delta):
 
 func _on_NewPath_timeout():
 	new_path = true
+
+func _on_Area2D_body_entered(body):
+	if body is player_class:
+		player = body
+		$Timer.start()
+
+func _on_Area2D_body_exited(body):
+	if body is player_class:
+		player = null
+		$Timer.stop()
+
+func _on_Timer_timeout():
+	if player != null and player is player_class:
+		player.decrease_lamp_health(damage)
