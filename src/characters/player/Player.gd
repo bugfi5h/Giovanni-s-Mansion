@@ -9,7 +9,7 @@ export(int) var lamp_timer_in_seconds = 3
 export(int) var stamina_decrease = 1
 export(int) var stamina_restoration = 5
 export(int) var max_speed = 100
-export(int) var max_sprint_speed = 250
+export(int) var max_sprint_speed = 200
 
 const max_lamp_health = 100;
 var stamina = 100

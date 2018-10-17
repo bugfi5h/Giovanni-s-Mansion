@@ -4,8 +4,8 @@ var lvl1_player : AudioStreamPlayer
 var lvl2_player : AudioStreamPlayer
 var lvl3_player : AudioStreamPlayer
 
-var player
-var wrath
+var playerPosition : Vector2
+var wrathPosition : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,24 +17,31 @@ func _ready():
 	lvl2_player.set_volume_db(-100)
 	lvl3_player.set_volume_db(-100)
 	
-	lvl1_player.play()
-	lvl2_player.play()
-	lvl3_player.play()
-	
-	player = get_tree().get_root().find_node("Player")
-	wrath = get_tree().get_root().find_node("Wrath")
-	pass # Replace with function body.
+
+	playerPosition = Vector2()
+	wrathPosition = Vector2()
+
+func _process(delta):
+	updateVolume()
 
 func updateVolume():
-	var distance = getDistance(player, wrath)
-	lvl2_player.set_volume_db(-distance)
-	lvl3_player.set_volume_db(-distance-10)
+	var distance = playerPosition.distance_to(wrathPosition)
+	#print(distance)
+	lvl2_player.set_volume_db(-(distance / 20))
+	lvl3_player.set_volume_db(-(distance / 10))
 	
 
-func getDistance(node1, node2):
-	return (node1.position - node2.position).length()
+	if distance < 10:
+		AudioServer.set_bus_effect_enabled(0, 0, true)
+	else:
+		AudioServer.set_bus_effect_enabled(0, 0, false)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func getDistance(pos1, pos2):
+	return (pos1 - pos2).length()
+	
+func _on_Player_player_moved(newPosition):
+	playerPosition = newPosition
+	
+func _on_Wrath_wrath_moved(newPosition):
+	wrathPosition = newPosition

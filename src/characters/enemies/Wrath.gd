@@ -1,10 +1,9 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal wrath_moved(pos)
+
 var anim = ""
-export(int) var speed = 150
+export(int) var speed = 50
 var nav = null
 var path = []
 var goal = Vector2()
@@ -40,6 +39,7 @@ func _physics_process(delta):
 		var distance_to_point = position.distance_to(path[0])
 		if distance_to_point > 2:
 			position = position.linear_interpolate(path[0], (speed * delta/distance_to_point))
+			emit_signal("wrath_moved", position)
 		else:
 			path.remove(0)
 	

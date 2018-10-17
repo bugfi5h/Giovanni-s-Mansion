@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GiovannisMansionMainTheme_Drums.ogg-8e4b42ec20956f01dfd36dc17b45cede.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/GiovannisMansionMainTheme_Drums.ogg"
+dest_files=[ "res://.import/GiovannisMansionMainTheme_Drums.ogg-8e4b42ec20956f01dfd36dc17b45cede.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

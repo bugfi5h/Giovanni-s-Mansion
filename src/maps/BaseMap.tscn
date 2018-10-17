@@ -94,6 +94,7 @@ tile_data = PoolIntArray(  )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 593.647, 263.408 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
+max_sprint_speed = 200
 
 [node name="Roof" type="TileMap" parent="."]
 mode = 0

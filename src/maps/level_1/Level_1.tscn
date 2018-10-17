@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/PathAndCollisionMap/NavigationMap.tres" type="TileSet" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://audio/MansionAudioPlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -134,6 +136,7 @@ _sections_unfolded = [ "occluder" ]
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 593.647, 263.408 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
+max_sprint_speed = 200
 
 [node name="Roof" type="TileMap" parent="."]
 mode = 0
@@ -176,19 +179,16 @@ tile_data = PoolIntArray(  )
 
 [node name="UI" parent="." instance=ExtResource( 5 )]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( -1.89999, 5.69997 )
-stream = null
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-stream_paused = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-
 [node name="PauseScreen" parent="." instance=ExtResource( 6 )]
 
+[node name="AudioPlayer" parent="." instance=ExtResource( 7 )]
+
+[node name="Wrath" parent="." instance=ExtResource( 8 )]
+position = Vector2( 664, 77 )
+speed = 50
+
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
+[connection signal="player_moved" from="Player" to="Wrath" method="update_goal"]
+[connection signal="player_moved" from="Player" to="AudioPlayer" method="_on_Player_player_moved"]
 [connection signal="stamina_changed" from="Player" to="UI" method="_on_Player_stamina_changed"]
+[connection signal="wrath_moved" from="Wrath" to="AudioPlayer" method="_on_Wrath_wrath_moved"]

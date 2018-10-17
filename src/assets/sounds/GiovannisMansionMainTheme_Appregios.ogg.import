@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GiovannisMansionMainTheme_Appregios.ogg-e5fb9e8129f5420f4ac8972850e9b3ba.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/GiovannisMansionMainTheme_Appregios.ogg"
+dest_files=[ "res://.import/GiovannisMansionMainTheme_Appregios.ogg-e5fb9e8129f5420f4ac8972850e9b3ba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
