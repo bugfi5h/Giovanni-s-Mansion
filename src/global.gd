@@ -20,11 +20,16 @@ func get_display_stage_level():
 	return String(stage + 1)
 
 func game_over():
-	stage = 0
+	reset_game()
 	goto_scene("res://ui/GameOver.tscn")
 
-func goto_main_menu():
+func reset_game():
 	stage = 0
+	player_oil = 100
+	player_stamina = 100
+
+func goto_main_menu():
+	reset_game()
 	goto_scene("res://ui/MainMenu.tscn")
 
 func goto_next_floor():

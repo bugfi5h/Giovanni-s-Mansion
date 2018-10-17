@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/images/dungeon/tiles.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/dungeon/StairsDown.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/dungeon/StairsUp.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/dungeon/StairDoor.png" type="Texture" id=4]
 
 [node name="dungeon_tiles" type="Node2D"]
 
@@ -304,4 +307,16 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 112, 112, 16, 16 )
 _sections_unfolded = [ "Region" ]
+
+[node name="64" type="Sprite" parent="."]
+position = Vector2( 80, 120 )
+texture = ExtResource( 2 )
+
+[node name="65" type="Sprite" parent="."]
+position = Vector2( 100, 120 )
+texture = ExtResource( 3 )
+
+[node name="66" type="Sprite" parent="."]
+position = Vector2( 120, 120 )
+texture = ExtResource( 4 )
 
