@@ -1,0 +1,230 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://assets/images/PathAndCollisionMap/NoWalk.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/images/PathAndCollisionMap/Walk.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/images/PathAndCollisionMap/WallLeftRight.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/images/PathAndCollisionMap/WallUpDown.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/images/PathAndCollisionMap/DotLeft.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/images/PathAndCollisionMap/DotRight.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/images/PathAndCollisionMap/Corner.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/images/PathAndCollisionMap/CornerRight.jpg" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = PoolVector2Array( 8.27469, -7.73899, 8.27469, 8.26101, -7.72531, 8.26101, -7.72531, -7.73899 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -7.72531, -7.73899, -7.72531, 8.26101, 8.27469, 8.26101, 8.27469, -7.73899 ) ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.5, 8.00019 )
+
+[sub_resource type="NavigationPolygon" id=4]
+
+vertices = PoolVector2Array( 7.99285, 8.0274, -3, 8, -3, -8, 8, -8, 8, 8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
+outlines = [ PoolVector2Array( 7.99285, 8.0274, -3, 8, -3, -8, 8, -8, 8, 8 ) ]
+
+[sub_resource type="NavigationPolygon" id=5]
+
+vertices = PoolVector2Array( 8, -8, 8, 4, -8, 4, -8, -8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -8, -8, -8, 4, 8, 4, 8, -8 ) ]
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 2 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.5, 2 )
+
+[sub_resource type="NavigationPolygon" id=8]
+
+vertices = PoolVector2Array( -8, -8, 8, -8, 8, 8, -3, 4, -3, 8, -8, 4 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 0, 3, 5 ), PoolIntArray( 0, 0, 5 ) ]
+outlines = [ PoolVector2Array( -8, -8, 8, -8, 8, 8, -3, 8, -3, 4, -8, 4, -8, -8 ) ]
+
+[sub_resource type="NavigationPolygon" id=9]
+
+vertices = PoolVector2Array( -8, -8, 8, -8, 8, 4, 3, 4, -8, 8, 3, 8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ) ]
+outlines = [ PoolVector2Array( -8, -8, -8, 8, 3, 8, 3, 4, 8, 4, 8, -8 ) ]
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.5, 2 )
+
+[sub_resource type="NavigationPolygon" id=11]
+
+vertices = PoolVector2Array( 8, -8, 8, 4, -3, 4, -3, -8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -3, -8, -3, 4, 8, 4, 8, -8 ) ]
+
+[sub_resource type="NavigationPolygon" id=12]
+
+vertices = PoolVector2Array( 3, -8, 3, 4, -8, 4, -8, -8 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -8, -8, -8, 4, 3, 4, 3, -8 ) ]
+
+[node name="NavigationMap" type="Node2D"]
+
+[node name="NoWalk" type="Sprite" parent="."]
+position = Vector2( 26, 14 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NoWalk"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoWalk/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Walk" type="Sprite" parent="."]
+position = Vector2( 45, 14 )
+texture = ExtResource( 2 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Walk"]
+position = Vector2( -0.274693, -0.261011 )
+navpoly = SubResource( 2 )
+enabled = true
+
+[node name="WallLeftRight" type="Sprite" parent="."]
+position = Vector2( 64, 14 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallLeftRight"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeftRight/StaticBody2D"]
+position = Vector2( -5.5, 0 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform", "shape" ]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WallLeftRight"]
+navpoly = SubResource( 4 )
+enabled = true
+_sections_unfolded = [ "navpoly" ]
+
+[node name="WallUpDown" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 83, 14 )
+texture = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WallUpDown"]
+navpoly = SubResource( 5 )
+enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallUpDown"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallUpDown/StaticBody2D"]
+position = Vector2( 0, 6 )
+shape = SubResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DotLeft" type="Sprite" parent="."]
+position = Vector2( 26, 33 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DotLeft"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DotLeft/StaticBody2D"]
+position = Vector2( -5.5, 6 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="DotLeft"]
+navpoly = SubResource( 8 )
+enabled = true
+
+[node name="DotRight" type="Sprite" parent="."]
+position = Vector2( 45, 33 )
+texture = ExtResource( 6 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="DotRight"]
+navpoly = SubResource( 9 )
+enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DotRight"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DotRight/StaticBody2D"]
+position = Vector2( 5.5, 6 )
+shape = SubResource( 10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CornerLeft" type="Sprite" parent="."]
+position = Vector2( 64, 33 )
+texture = ExtResource( 7 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="CornerLeft"]
+navpoly = SubResource( 11 )
+enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CornerLeft"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CornerLeft/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, -8, 8, 8, 8, 8, 4, -3, 4, -3, -8 )
+
+[node name="CornerRight" type="Sprite" parent="."]
+position = Vector2( 83, 33 )
+texture = ExtResource( 8 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="CornerRight"]
+navpoly = SubResource( 12 )
+enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CornerRight"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+physics_material_override = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CornerRight/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -8, 4, -8, 8, 8, 8, 8, -8, 3, -8, 3, 4 )
+
