@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+signal dialogue_animation_finished()
+
+var dialogue_is_playing = false
 var greenProgressTexture
 var yellowProgressTexture
 var redProgressTexture
@@ -39,8 +42,15 @@ func _on_Player_stamina_changed(amount):
 	
 	
 func set_text(message):
-	$TextMargin/Text.text = message
-	$AnimationPlayer.play("NewText")
+	if !dialogue_is_playing:
+		$TextMargin/Text.text = message
+		$DialogueAnimationPlayer.play("NewText")
+		dialogue_is_playing = true
+	
 
 func _set_text(message):
 	pass # Replace with function body.
+
+func on_dialogue_animation_finished(name):
+	dialogue_is_playing = false
+	emit_signal("dialogue_animation_finished")

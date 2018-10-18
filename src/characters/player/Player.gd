@@ -17,9 +17,25 @@ var stamina = 100
 var lamp_health = 100
 var start_texture_scale
 var velocity = Vector2()
+var inputIsEnabled = true
 
 var pre_text = "Bob: "
-var messages = ["It's getting dark...", "I really have to find oil", "What am I doing here?"]
+var messages = [
+	"It's getting dark...", 
+	"I really have to find oil.", 
+	"What am I doing here?",
+	"How did I even got that lamp? I never owned one!",
+	"That's brutal.",
+	"Is it just me, or is it getting darker?",
+	"Stop talking to yourself, Bob.",
+	"Can you hear it? The sound of silence...",
+	"I should buy some lamp oil, when I'm home.",
+	"Where is that damn monkey when you need him?",
+	"Oh look, a spider!",
+	"I could use some day light",
+	"*shivers*",
+	"I want a hovercraft full of eels"
+]
 var next_text_at
 
 var globals
@@ -39,7 +55,9 @@ func _ready():
 	$StaminaRestorationTimer.start()
 
 func _physics_process(delta):
-	control(delta)
+	if inputIsEnabled: 
+		control(delta)
+	
 	move_and_slide(velocity)
 	play_animation()
 	emit_signal("player_moved", position)
@@ -148,3 +166,6 @@ func _set_stamina(amount):
 
 func _on_StaminaRestorationTimer_timeout():
 	increase_stamina(stamina_restoration)
+
+func _set_inputIsEnabled(value: bool):
+	inputIsEnabled = value
