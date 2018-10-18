@@ -1,7 +1,7 @@
 extends Node2D
 
 export(int) var lamp_oil_amount = 1
-var collected = false
+var already_collected = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -15,8 +15,8 @@ func collected():
 	$AnimationPlayer.play("Collected")
 
 func _on_Area2D_body_entered(body):
-	if !collected:
-		collected = true
+	if !already_collected:
+		already_collected = true
 		var player_class = load("res://characters/player/Player.gd")
 		if body is player_class:
 			body.add_lamp_health(lamp_oil_amount)

@@ -13,7 +13,7 @@ func _ready():
 	globals = get_node("/root/globals")
 	set_limits()
 	set_camera_limits()
-	color = Color("#000000")
+	#color = Color("#000000")
 	pass
 
 func set_limits():
@@ -45,8 +45,7 @@ func _process(delta):
 		
 #	pass
 
-func _on_Wall_set_tiles(coordinates, id):
+func _on_Wall_set_tiles(coordinate, id):
 	var map = $Nav/CollsionsAndNavigation
-	for coordinate in coordinates:
-		var tile = map.world_to_map(coordinate)
-		map.set_cell(tile.x, tile.y, id)
+	var tile = map.world_to_map(coordinate)
+	map.set_cell(tile.x, tile.y, id)
