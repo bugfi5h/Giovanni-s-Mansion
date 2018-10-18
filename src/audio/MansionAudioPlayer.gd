@@ -18,20 +18,24 @@ func _ready():
 	lvl3_player.set_volume_db(-100)
 	
 
-	playerPosition = Vector2()
-	wrathPosition = Vector2()
+#	playerPosition = Vector2()
+#	wrathPosition = null
 
 func _process(delta):
 	updateVolume()
 
 func updateVolume():
-	var distance = playerPosition.distance_to(wrathPosition)
-	#print(distance)
+	var distance
+	if playerPosition != null && wrathPosition != null:
+		distance = playerPosition.distance_to(wrathPosition)
+	else:
+		distance = 100000
+	
 	lvl2_player.set_volume_db(-(distance / 20))
 	lvl3_player.set_volume_db(-(distance / 10))
 	
 
-	if distance < 10:
+	if distance < 8:
 		AudioServer.set_bus_effect_enabled(0, 0, true)
 	else:
 		AudioServer.set_bus_effect_enabled(0, 0, false)
