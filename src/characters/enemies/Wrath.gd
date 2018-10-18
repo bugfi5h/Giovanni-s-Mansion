@@ -11,6 +11,8 @@ var new_path = true
 var player = null
 var player_class = preload("res://characters/player/Player.gd")
 export(int) var damage = 3
+export(bool) var should_follow_player = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var parent = get_owner()
@@ -37,7 +39,7 @@ func update_path():
 func _physics_process(delta):
 	if path.size() > 1:
 		var distance_to_point = position.distance_to(path[0])
-		if distance_to_point > 2:
+		if distance_to_point > 2 && should_follow_player:
 			position = position.linear_interpolate(path[0], (speed * delta/distance_to_point))
 			emit_signal("wrath_moved", position)
 		else:
