@@ -3,7 +3,7 @@
 [ext_resource path="res://ui/UI.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/progressbar_green.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/lamp.png" type="Texture" id=3]
-[ext_resource path="res://ui/Comfortaa-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/fonts/VCR_OSD_MONO_1001.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/fonts/Giovannis_Dynamic_Font.tres" type="DynamicFont" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -164,7 +164,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 135.0
+margin_right = 132.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -199,9 +199,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 68.0
-margin_top = 16.0
-margin_right = 135.0
-margin_bottom = 48.0
+margin_top = 19.0
+margin_right = 132.0
+margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
