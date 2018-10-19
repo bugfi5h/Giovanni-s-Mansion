@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DotLeft.jpg-cdba6da3eb2ec115a5dc14e212d121ae.stex"
+path="res://.import/DotRight.jpg-49e2be415a02cb2dd2123c1062d31ea3.stex"
 
 [deps]
 
-source_file="res://assets/images/PathAndCollisionMap/DotLeft.jpg"
-dest_files=[ "res://.import/DotLeft.jpg-cdba6da3eb2ec115a5dc14e212d121ae.stex" ]
+source_file="res://assets/images/PathMap/DotRight.jpg"
+dest_files=[ "res://.import/DotRight.jpg-49e2be415a02cb2dd2123c1062d31ea3.stex" ]
 
 [params]
 

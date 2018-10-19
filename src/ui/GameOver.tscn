@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/MainMenu_Background.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Giovannis_Dynamic_Font_Headline.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/Giovannis_Dynamic_Font.tres" type="DynamicFont" id=4]
 
 [node name="GameOver" type="CanvasLayer"]
 layer = 1
@@ -9,6 +12,22 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_left = 0.0
@@ -42,10 +61,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 432.0
-margin_top = 257.0
-margin_right = 591.0
-margin_bottom = 343.0
+margin_left = 411.0
+margin_top = 249.0
+margin_right = 612.0
+margin_bottom = 351.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -56,34 +75,36 @@ alignment = 0
 _sections_unfolded = [ "Rect" ]
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
-anchor_left = 0.0
+anchor_left = 0.5
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 0.5
 anchor_bottom = 0.0
-margin_right = 159.0
-margin_bottom = 14.0
+margin_left = -100.5
+margin_right = 100.5
+margin_bottom = 29.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
 text = "Game Over"
 align = 1
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Margin", "custom_fonts" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 18.0
-margin_right = 159.0
-margin_bottom = 32.0
+margin_top = 33.0
+margin_right = 201.0
+margin_bottom = 48.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -91,33 +112,35 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 91.0
-margin_bottom = 14.0
+margin_right = 126.0
+margin_bottom = 15.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
 text = "Highest Stage:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Stage" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 95.0
-margin_right = 95.0
+margin_left = 130.0
+margin_right = 130.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -134,9 +157,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 36.0
-margin_right = 159.0
-margin_bottom = 86.0
+margin_top = 52.0
+margin_right = 201.0
+margin_bottom = 102.0
 rect_min_size = Vector2( 0, 50 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -145,6 +168,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_hover = Color( 0.929412, 0.396078, 0.396078, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -153,6 +177,6 @@ group = null
 text = "Back to the Main Menu"
 flat = false
 align = 1
-_sections_unfolded = [ "Margin", "custom_colors" ]
+_sections_unfolded = [ "Anchor", "custom_colors", "custom_fonts" ]
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

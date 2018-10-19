@@ -36,3 +36,11 @@ func _on_Area2D_body_entered(body):
 			$Sprite.texture = pushed_state
 			pushed = true
 		emit_signal("pressure_plate_pushed", pushed)
+
+func _on_pressure_plate_pushed(pushed):
+	if pushed:
+		$Sprite.texture = unpushed_state
+		pushed = false
+	else:
+		$Sprite.texture = pushed_state
+		pushed = true

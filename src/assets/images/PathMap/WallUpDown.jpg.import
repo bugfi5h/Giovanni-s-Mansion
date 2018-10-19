@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DotRight.jpg-e7ab3f46fad16ac572f6419452e8db24.stex"
+path="res://.import/WallUpDown.jpg-f846fd08c9eff87dfb9e4cd2bafd6106.stex"
 
 [deps]
 
-source_file="res://assets/images/PathAndCollisionMap/DotRight.jpg"
-dest_files=[ "res://.import/DotRight.jpg-e7ab3f46fad16ac572f6419452e8db24.stex" ]
+source_file="res://assets/images/PathMap/WallUpDown.jpg"
+dest_files=[ "res://.import/WallUpDown.jpg-f846fd08c9eff87dfb9e4cd2bafd6106.stex" ]
 
 [params]
 

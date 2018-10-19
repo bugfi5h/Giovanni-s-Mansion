@@ -8,6 +8,7 @@ enum Direction{
 }
 
 signal set_tile(coordinates, id)
+signal pressure_plate_pushed(is_pushed_in)
 var used_cells
 
 func _ready():
@@ -59,8 +60,9 @@ func get_moving_dir(is_pushed_in):
 			dir = LEFT
 	return dir
 
-func _on_PressurePlate_pressure_plate_pushed(is_pushed_in):
+func _on_pressure_plate_pushed(is_pushed_in):
 	move_wall(is_pushed_in)
+	emit_signal("pressure_plate_pushed",is_pushed_in)
 	
 func _on_Tween_tween_completed(object, key):
 	set_occupied_coords()

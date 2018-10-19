@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wraith.png-ab95c87065fb2a4e363115ad9f9f2466.stex"
+path="res://.import/DotLeft.jpg-5881ab32a66e279b52cb134d9b2c2c83.stex"
 
 [deps]
 
-source_file="res://assets/images/Wraith.png"
-dest_files=[ "res://.import/Wraith.png-ab95c87065fb2a4e363115ad9f9f2466.stex" ]
+source_file="res://assets/images/PathMap/DotLeft.jpg"
+dest_files=[ "res://.import/DotLeft.jpg-5881ab32a66e279b52cb134d9b2c2c83.stex" ]
 
 [params]
 

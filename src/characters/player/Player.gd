@@ -19,7 +19,8 @@ var start_texture_scale
 var velocity = Vector2()
 var inputIsEnabled = true
 
-var pre_text = "Bob: "
+var player_name = "Bob"
+const pre_text = ": "
 var messages = [
 	"It's getting dark...", 
 	"I really have to find oil.", 
@@ -133,9 +134,11 @@ func check_for_message():
 	if(lamp_health < next_text_at):
 		var array_size = messages.size()
 		var index = randi()%array_size
-		emit_signal("player_talks", pre_text+messages[index])
+		on_player_talks(messages[index])
 		set_next_text_at(lamp_health)
 
+func on_player_talks(message):
+	emit_signal("player_talks",player_name+pre_text+message)
 	
 func set_next_text_at(health):
 	if health > 75:
