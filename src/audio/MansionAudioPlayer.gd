@@ -19,14 +19,14 @@ func _ready():
 	
 
 #	playerPosition = Vector2()
-#	wrathPosition = null
+#	wrathPosition = Vector2()
 
 func _process(delta):
 	updateVolume()
 
 func updateVolume():
 	var distance
-	if playerPosition != null && wrathPosition != null:
+	if playerPosition != Vector2.ZERO && wrathPosition != Vector2.ZERO:
 		distance = playerPosition.distance_to(wrathPosition)
 	else:
 		distance = 100000

@@ -8,6 +8,9 @@ func _ready():
 func _play_game_over():
 	$GameOver.play()
 
+func _on_MovableWall_moves(a):
+	_play_move_wall()
+
 func _play_move_wall():
 	$MoveWall.play()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/PathMap/NavigationMap.tres" type="TileSet" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://audio/MansionAudioPlayer.tscn" type="PackedScene" id=9]
-[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://audio/SoundEffects.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=11]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -184,7 +185,9 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Audio" parent="." instance=ExtResource( 9 )]
 
-[node name="PauseScreen" parent="." instance=ExtResource( 10 )]
+[node name="SoundEffects" parent="." instance=ExtResource( 10 )]
+
+[node name="PauseScreen" parent="." instance=ExtResource( 11 )]
 
 [node name="Light" type="Node2D" parent="."]
 editor/display_folded = true
@@ -194,6 +197,7 @@ occluder = SubResource( 1 )
 light_mask = 1
 _sections_unfolded = [ "occluder" ]
 
+[connection signal="pressure_plate_pushed" from="MoveableWalls/MoveableWall_1" to="SoundEffects" method="_play_move_wall"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/PressurePlate" to="MoveableWalls/MoveableWall_1" method="_on_pressure_plate_pushed"]
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
 [connection signal="player_moved" from="Player" to="Audio" method="_on_Player_player_moved"]

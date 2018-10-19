@@ -20,6 +20,7 @@ func _ready():
 		nav = parent.get_node("Nav")
 		if nav != null:
 			print("done")
+	emit_signal("wrath_moved", position)
 			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

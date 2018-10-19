@@ -61,27 +61,28 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 411.0
-margin_top = 249.0
-margin_right = 612.0
-margin_bottom = 351.0
+margin_left = 387.0
+margin_top = 97.0
+margin_right = 637.0
+margin_bottom = 502.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 20
 alignment = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_constants" ]
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
-anchor_left = 0.5
+[node name="GameOver" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -100.5
-margin_right = 100.5
-margin_bottom = 29.0
+margin_right = 250.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -95,16 +96,16 @@ uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_constants" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 33.0
-margin_right = 201.0
-margin_bottom = 48.0
+margin_top = 320.0
+margin_right = 250.0
+margin_bottom = 335.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -114,7 +115,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="HighestStage" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -141,26 +142,28 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 130.0
 margin_right = 130.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Button" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 52.0
-margin_right = 201.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 0, 50 )
+margin_top = 355.0
+margin_right = 250.0
+margin_bottom = 405.0
+rect_min_size = Vector2( 250, 50 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -177,6 +180,6 @@ group = null
 text = "Back to the Main Menu"
 flat = false
 align = 1
-_sections_unfolded = [ "Anchor", "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_fonts" ]
 
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
