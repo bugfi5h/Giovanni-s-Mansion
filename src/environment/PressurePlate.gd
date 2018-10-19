@@ -23,24 +23,16 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_Area2D_body_entered(body):
 	if(body is player_class):
 		if only_activation:
 			if first_state != pushed:
 				return
-		if pushed:
-			$Sprite.texture = unpushed_state
-			pushed = false
-		else:
-			$Sprite.texture = pushed_state
-			pushed = true
-		emit_signal("pressure_plate_pushed", pushed)
+		emit_signal("pressure_plate_pushed", !pushed)
 
-func _on_pressure_plate_pushed(pushed):
+func _on_pressure_plate_pushed(new_pushed):
+	pushed = new_pushed 
 	if pushed:
-		$Sprite.texture = unpushed_state
-		pushed = false
-	else:
 		$Sprite.texture = pushed_state
-		pushed = true
+	else:
+		$Sprite.texture = unpushed_state

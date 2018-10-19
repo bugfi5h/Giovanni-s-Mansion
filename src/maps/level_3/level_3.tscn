@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/PathMap/Walk.jpg" type="Texture" id=2]
@@ -804,6 +804,12 @@ extents = Vector2( 2.5, 2 )
 
 closed = true
 cull_mode = 0
+polygon = PoolVector2Array( 459, 113, 459, 112, 517, 112, 517, 113 )
+
+[sub_resource type="OccluderPolygon2D" id=23]
+
+closed = true
+cull_mode = 0
 polygon = PoolVector2Array( 83, 537, 144, 448, 320, 448, 320, 284, 277, 284, 277, 192, 315, 192, 315, 256, 373, 256, 373, 192, 432, 192, 437, 192, 437, 96, 459, 96, 459, 192, 517, 192, 517, 96, 624, 96, 624, -4, 459, -4, 459, 28, 283, 28, 283, 108, 235, 108, 235, 284, 144, 284, 144, 467, 23, 579, 111, 56, 393, -92.9628, 725, -75, 816, 110, 782, 544, 291, 568, 109, 576 )
 
 [node name="Map" type="CanvasModulate"]
@@ -969,6 +975,10 @@ format = 1
 tile_data = PoolIntArray( 327709, 41, 0, 327710, 41, 0, 327711, 41, 0, 393245, 31, 0, 393246, 32, 0, 393247, 33, 0 )
 _sections_unfolded = [ "Cell" ]
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="MoveableWalls/MoveableWall3"]
+occluder = SubResource( 22 )
+light_mask = 1
+
 [node name="Plates" type="Node2D" parent="."]
 position = Vector2( 331.359, 231.045 )
 
@@ -992,7 +1002,7 @@ only_activation = true
 
 [node name="Lamp" parent="." instance=ExtResource( 17 )]
 position = Vector2( 488, 167 )
-lamp_oil_amount = 5
+lamp_oil_amount = 10
 
 [node name="Player" parent="." instance=ExtResource( 18 )]
 position = Vector2( 215.546, 366.008 )
@@ -1020,7 +1030,7 @@ tile_data = PoolIntArray( 262171, 16, 0, 262172, 17, 0, 327707, 14, 0, 327708, 1
 _sections_unfolded = [ "Cell" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 22 )
+occluder = SubResource( 23 )
 light_mask = 1
 
 [node name="Stairs" parent="." instance=ExtResource( 19 )]

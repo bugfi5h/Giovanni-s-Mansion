@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Picture_1.png-a366f9e53e982f185683f1504af456e7.stex"
+path="res://.import/Picture.png-c0e0d3165d65d6d8c53683311804c8eb.stex"
 
 [deps]
 
-source_file="res://assets/images/dungeon/Picture_1.png"
-dest_files=[ "res://.import/Picture_1.png-a366f9e53e982f185683f1504af456e7.stex" ]
+source_file="res://assets/images/dungeon/Picture.png"
+dest_files=[ "res://.import/Picture.png-c0e0d3165d65d6d8c53683311804c8eb.stex" ]
 
 [params]
 
