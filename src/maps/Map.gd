@@ -13,7 +13,7 @@ func _ready():
 	globals = get_node("/root/globals")
 	set_limits()
 	set_camera_limits()
-	#color = Color("#000000")
+	color = Color("#000000")
 	pass
 
 func set_limits():
