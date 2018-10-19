@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://characters/enemies/Wrath.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/Wraith.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Wraith/Wraith.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/light.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -26,22 +26,21 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 2.27222
-height = 14.3643
+radius = 8.95753
+height = 3.6785
 
 [node name="Wrath" type="Node2D"]
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 speed = 150
 damage = 3
+should_follow_player = true
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
-vframes = 5
 hframes = 4
-frame = 1
-_sections_unfolded = [ "Animation", "Transform" ]
+_sections_unfolded = [ "Animation", "Region", "Transform", "texture" ]
 
 [node name="SpriteAnimations" type="AnimationPlayer" parent="."]
 root_node = NodePath("..")
@@ -53,15 +52,15 @@ anims/idle = SubResource( 1 )
 blend_times = [  ]
 
 [node name="Eyelight" type="Light2D" parent="."]
-position = Vector2( -0.72258, -11.5146 )
-scale = Vector2( 0.0307725, 0.017146 )
+position = Vector2( 0.00844803, -14.0005 )
+scale = Vector2( 0.028679, 0.0147036 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
-energy = 0.5
+energy = 0.75
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -93,7 +92,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 5.83823 )
+position = Vector2( -0.0694466, 3.06049 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
