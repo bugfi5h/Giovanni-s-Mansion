@@ -1,4 +1,4 @@
-extends "res://PlayerInteractionArea.gd"
+extends "res://environment/PlayerInteractionArea.gd"
 
 signal change_image
 

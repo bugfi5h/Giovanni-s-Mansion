@@ -1,4 +1,4 @@
-extends "res://PlayerInteractionArea.gd"
+extends "res://environment/PlayerInteractionArea.gd"
 
 signal send_text_to_player(message)
 
