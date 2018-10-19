@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/NoWalk.jpg-7c44972e1a033b90818b9db117003315.stex"
+path="res://.import/DotLeft.jpg-5881ab32a66e279b52cb134d9b2c2c83.stex"
 
 [deps]
 
-source_file="res://assets/images/PathAndCollisionMap/NoWalk.jpg"
-dest_files=[ "res://.import/NoWalk.jpg-7c44972e1a033b90818b9db117003315.stex" ]
+source_file="res://assets/images/PathMap/DotLeft.jpg"
+dest_files=[ "res://.import/DotLeft.jpg-5881ab32a66e279b52cb134d9b2c2c83.stex" ]
 
 [params]
 

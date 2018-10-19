@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/PathAndCollisionMap/NavigationMap.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/images/PathMap/NavigationMap.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/images/dungeon/dungeon_tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://environment/MoveableWall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=5]
@@ -10,6 +10,7 @@
 [ext_resource path="res://audio/MansionAudioPlayer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://collectables/Lamp.tscn" type="PackedScene" id=10]
+
 
 [node name="Map" type="CanvasModulate"]
 color = Color( 1, 1, 1, 1 )
@@ -34,7 +35,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327703, 0, 0, 393228, 0, 0, 393229, 0, 0, 393232, 0, 0, 393233, 17, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393241, 17, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 12, 0, 458770, 0, 0, 458773, 0, 0, 458777, 15, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 589844, 0, 0, 589845, 0, 0, 655381, 0, 0, 720917, 0, 0, 786453, 0, 0, 851989, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1310733, 0, 0, 1310734, 0, 0, 1376269, 0, 0, 1441805, 0, 0, 1507341, 0, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Ground" type="TileMap" parent="."]
@@ -102,9 +103,9 @@ _sections_unfolded = [ "Cell" ]
 [node name="MoveableWalls" type="Node2D" parent="."]
 
 [node name="MoveableWall2" parent="MoveableWalls" instance=ExtResource( 4 )]
-visible = false
 _sections_unfolded = [ "Transform", "Visibility" ]
 moving_dir = 3
+movement_in_px = 32
 
 [node name="TileMap" type="TileMap" parent="MoveableWalls/MoveableWall2"]
 mode = 0
@@ -127,8 +128,8 @@ tile_data = PoolIntArray( 393234, 30, 0, 393235, 30, 0, 393236, 30, 0, 393237, 3
 _sections_unfolded = [ "Cell" ]
 
 [node name="MoveableWall" parent="MoveableWalls" instance=ExtResource( 4 )]
-visible = false
 _sections_unfolded = [ "Transform", "Visibility" ]
+movement_in_px = 32
 
 [node name="TileMap" type="TileMap" parent="MoveableWalls/MoveableWall"]
 mode = 0
@@ -151,7 +152,6 @@ tile_data = PoolIntArray( 131093, 36, 0, 196629, 36, 0, 262165, 36, 0, 327701, 3
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="MoveableWall3" parent="MoveableWalls" instance=ExtResource( 4 )]
-visible = false
 _sections_unfolded = [ "Transform", "Visibility" ]
 moving_dir = 3
 movement_in_px = 32

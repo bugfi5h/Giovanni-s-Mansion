@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CornerRight.jpg-a6efd1b0a35bdd398614993a1fd0c94e.stex"
+path="res://.import/Corner.jpg-2d4c9256371199962311b9802d6967e0.stex"
 
 [deps]
 
-source_file="res://assets/images/PathAndCollisionMap/CornerRight.jpg"
-dest_files=[ "res://.import/CornerRight.jpg-a6efd1b0a35bdd398614993a1fd0c94e.stex" ]
+source_file="res://assets/images/PathMap/Corner.jpg"
+dest_files=[ "res://.import/Corner.jpg-2d4c9256371199962311b9802d6967e0.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WallUpDown.jpg-c5fadc0249c2b56841d184ad430dd66b.stex"
+path="res://.import/NoWalk.jpg-16b3c757c9c53983bc3fc1f5c787c3f3.stex"
 
 [deps]
 
-source_file="res://assets/images/PathAndCollisionMap/WallUpDown.jpg"
-dest_files=[ "res://.import/WallUpDown.jpg-c5fadc0249c2b56841d184ad430dd66b.stex" ]
+source_file="res://assets/images/PathMap/NoWalk.jpg"
+dest_files=[ "res://.import/NoWalk.jpg-16b3c757c9c53983bc3fc1f5c787c3f3.stex" ]
 
 [params]
 
