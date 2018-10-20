@@ -1,5 +1,7 @@
 extends Node2D
 
+const GameOver = preload("res://ui/GameOver.gd")
+
 var lvl1_player : AudioStreamPlayer
 var lvl2_player : AudioStreamPlayer
 var lvl3_player : AudioStreamPlayer
@@ -22,8 +24,6 @@ func _ready():
 	var globals = get_node("/root/globals")
 	globals.connect("scene_changed", self, "_on_scene_changed")
 	_on_scene_changed(globals.current_scene)
-#	playerPosition = Vector2()
-#	wrathPosition = Vector2()
 
 func _on_scene_changed(new_scene):
 	playerPosition = Vector2.ZERO
@@ -47,13 +47,22 @@ func connect_player_and_wrath(scene):
 	var player = scene.find_node("Player")
 	if player != null:
 		player.connect("player_moved", self, "_on_Player_player_moved")
+		if $Menu_Player.playing:
+			$Menu_Player.stop()
 		if  !lvl1_player.playing:
 			_start_playback()
 	else:
 		_stop_playback()
+		if !scene is GameOver:
+			_play_menu_music()
+		
 	var wrath = scene.find_node("Wrath")
 	if wrath != null:
 		wrath.connect("wrath_moved", self, "_on_Wrath_wrath_moved")
+
+func _play_menu_music():
+	if !$Menu_Player.playing:
+		$Menu_Player.play()
 
 func _process(delta):
 	updateVolume()
@@ -73,7 +82,6 @@ func updateVolume():
 		AudioServer.set_bus_effect_enabled(0, 0, true)
 	else:
 		AudioServer.set_bus_effect_enabled(0, 0, false)
-	
 
 func getDistance(pos1, pos2):
 	return (pos1 - pos2).length()
