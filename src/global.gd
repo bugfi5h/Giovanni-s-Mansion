@@ -13,14 +13,13 @@ var stage = 0
 
 var current_scene = null
 
-var stages = ["res://maps/level_1/Level_1.tscn","res://maps/level_3/level_3.tscn","res://maps/level_2/Level_2.tscn", "res://maps/level_4/level_4.tscn"]
+var stages = ["res://maps/level_1/Level_1.tscn", "res://maps/level_3/level_3.tscn", "res://maps/level_4/level_4.tscn", "res://maps/level_2/Level_2.tscn"]
 
 func _ready():
         var root = get_tree().get_root()
         current_scene = root.get_child(root.get_child_count() -1)
 
 func get_display_stage_level():
-	var visible_stage = stage +1
 	return String(stage + 1)
 
 func get_current_scene():
