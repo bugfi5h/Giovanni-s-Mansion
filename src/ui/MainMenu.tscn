@@ -341,9 +341,9 @@ texture = ExtResource( 7 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor" ]
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/New Game" to="SoundEffects" method="_play_button_click"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/Instructions" to="SoundEffects" method="_play_button_click"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/End" to="." method="_on_End_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/Instructions" to="." method="_on_Instructions_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/End" to="SoundEffects" method="_play_button_click"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/End" to="." method="_on_End_pressed"]

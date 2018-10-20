@@ -10,7 +10,6 @@ var bottom_limit = 0
 var globals
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("Springs")
 	globals = get_node("/root/globals")
 	set_limits()
 	set_camera_limits()

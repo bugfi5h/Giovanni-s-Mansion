@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://maps/Map.gd" type="Script" id=1]
+[ext_resource path="res://maps/level_2/Level_2.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/PathMap/NavigationMap.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/images/dungeon/dungeon_tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://assets/images/dungeon/dungeon_tiles_with_col.tres" type="TileSet" id=4]

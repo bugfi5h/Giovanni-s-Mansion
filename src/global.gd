@@ -20,7 +20,7 @@ func _ready():
         current_scene = root.get_child(root.get_child_count() -1)
 
 func get_display_stage_level():
-	return String(stage + 1)
+	return String(stage)
 
 func get_current_scene():
 	return current_scene
