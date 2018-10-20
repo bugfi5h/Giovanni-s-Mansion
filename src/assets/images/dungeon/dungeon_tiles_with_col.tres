@@ -857,5 +857,5 @@ extents = Vector2( 8, 8 )
 45/navigation_offset = Vector2( 8, 8 )
 45/shapes = [  ]
 45/z_index = 0
-_sections_unfolded = [ "18", "21" ]
+_sections_unfolded = [ "21" ]
 
