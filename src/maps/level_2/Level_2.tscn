@@ -8,9 +8,9 @@
 [ext_resource path="res://environment/PressurePlate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=8]
-[ext_resource path="res://audio/MansionAudioPlayer.tscn" type="PackedScene" id=9]
-[ext_resource path="res://audio/SoundEffects.tscn" type="PackedScene" id=10]
-[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://audio/SoundEffects.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://environment/Stairs.tscn" type="PackedScene" id=11]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -183,11 +183,9 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="UI" parent="." instance=ExtResource( 8 )]
 
-[node name="Audio" parent="." instance=ExtResource( 9 )]
+[node name="SoundEffects" parent="." instance=ExtResource( 9 )]
 
-[node name="SoundEffects" parent="." instance=ExtResource( 10 )]
-
-[node name="PauseScreen" parent="." instance=ExtResource( 11 )]
+[node name="PauseScreen" parent="." instance=ExtResource( 10 )]
 
 [node name="Light" type="Node2D" parent="."]
 editor/display_folded = true
@@ -197,9 +195,11 @@ occluder = SubResource( 1 )
 light_mask = 1
 _sections_unfolded = [ "occluder" ]
 
+[node name="Stairs" parent="." instance=ExtResource( 11 )]
+position = Vector2( 711.721, 24.7549 )
+
 [connection signal="pressure_plate_pushed" from="MoveableWalls/MoveableWall_1" to="SoundEffects" method="_play_move_wall"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/PressurePlate" to="MoveableWalls/MoveableWall_1" method="_on_pressure_plate_pushed"]
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
-[connection signal="player_moved" from="Player" to="Audio" method="_on_Player_player_moved"]
 [connection signal="player_talks" from="Player" to="UI" method="set_text"]
 [connection signal="stamina_changed" from="Player" to="UI" method="_on_Player_stamina_changed"]

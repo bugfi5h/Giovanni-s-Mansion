@@ -22,6 +22,7 @@ config/icon="res://assets/images/icon.png"
 [autoload]
 
 globals="*res://global.gd"
+MansionAudioPlayer="*res://audio/MansionAudioPlayer.tscn"
 
 [display]
 

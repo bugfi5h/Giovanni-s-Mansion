@@ -44,6 +44,7 @@ var anim = ""
 
 onready var sprite = $Sprite
 
+
 func _ready():
 	globals = get_node("/root/globals")
 	$LightAnimation.play("glow")

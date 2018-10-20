@@ -17,9 +17,23 @@ func _ready():
 	lvl2_player.set_volume_db(-100)
 	lvl3_player.set_volume_db(-100)
 	
-
+	get_node("/root/globals").connect("scene_changed", self, "_on_scene_changed")
 #	playerPosition = Vector2()
 #	wrathPosition = Vector2()
+
+func _on_scene_changed(new_scene):
+	playerPosition = Vector2.ZERO
+	wrathPosition = Vector2.ZERO
+	connect_player_and_wrath(new_scene)
+	
+
+func connect_player_and_wrath(scene):
+	var player = scene.find_node("Player")
+	if player != null:
+		player.connect("player_moved", self, "_on_Player_player_moved")
+	var wrath = scene.find_node("Wrath")
+	if wrath != null:
+		wrath.connect("wrath_moved", self, "_on_Wrath_wrath_moved")
 
 func _process(delta):
 	updateVolume()

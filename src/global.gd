@@ -4,6 +4,8 @@ extends Node
 # var a = 2
 # var b = "text"
 
+signal scene_changed(new_scene)
+
 var player_oil = 100
 var player_stamina = 100
 var stage = 0
@@ -74,3 +76,4 @@ func _deferred_goto_scene(path):
 
     # Optional, to make it compatible with the SceneTree.change_scene() API.
     get_tree().set_current_scene(current_scene)
+    emit_signal("scene_changed", current_scene)

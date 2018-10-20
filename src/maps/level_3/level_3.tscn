@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/PathMap/Walk.jpg" type="Texture" id=2]
@@ -14,11 +14,10 @@
 [ext_resource path="res://environment/MoveableWall.tscn" type="PackedScene" id=12]
 [ext_resource path="res://environment/PressurePlate.tscn" type="PackedScene" id=13]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=14]
-[ext_resource path="res://audio/MansionAudioPlayer.tscn" type="PackedScene" id=15]
-[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=16]
-[ext_resource path="res://collectables/Lamp.tscn" type="PackedScene" id=17]
-[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=18]
-[ext_resource path="res://environment/Stairs.tscn" type="PackedScene" id=19]
+[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=15]
+[ext_resource path="res://collectables/Lamp.tscn" type="PackedScene" id=16]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=17]
+[ext_resource path="res://environment/Stairs.tscn" type="PackedScene" id=18]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -997,15 +996,13 @@ only_activation = true
 
 [node name="UI" parent="." instance=ExtResource( 14 )]
 
-[node name="Audio" parent="." instance=ExtResource( 15 )]
+[node name="PauseScreen" parent="." instance=ExtResource( 15 )]
 
-[node name="PauseScreen" parent="." instance=ExtResource( 16 )]
-
-[node name="Lamp" parent="." instance=ExtResource( 17 )]
+[node name="Lamp" parent="." instance=ExtResource( 16 )]
 position = Vector2( 488, 167 )
 lamp_oil_amount = 10
 
-[node name="Player" parent="." instance=ExtResource( 18 )]
+[node name="Player" parent="." instance=ExtResource( 17 )]
 position = Vector2( 215.546, 366.008 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 max_sprint_speed = 200
@@ -1034,7 +1031,7 @@ _sections_unfolded = [ "Cell" ]
 occluder = SubResource( 23 )
 light_mask = 1
 
-[node name="Stairs" parent="." instance=ExtResource( 19 )]
+[node name="Stairs" parent="." instance=ExtResource( 18 )]
 position = Vector2( 568, 23 )
 
 [connection signal="pressure_plate_pushed" from="MoveableWalls/FirstWall Right" to="Plates/FirstWall Right" method="_on_pressure_plate_pushed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://maps/level_4/level_4.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/PathMap/NavigationMap.tres" type="TileSet" id=2]
@@ -14,8 +14,7 @@
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=13]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=14]
-[ext_resource path="res://audio/MansionAudioPlayer.tscn" type="PackedScene" id=15]
-[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=16]
+[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=15]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -400,9 +399,7 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="UI" parent="." instance=ExtResource( 14 )]
 
-[node name="Audio" parent="." instance=ExtResource( 15 )]
-
-[node name="PauseScreen" parent="." instance=ExtResource( 16 )]
+[node name="PauseScreen" parent="." instance=ExtResource( 15 )]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 6 )
@@ -425,8 +422,8 @@ blend_times = [  ]
 [connection signal="set_tile" from="MoveableWalls/EndSwitchWall" to="." method="_on_Wall_set_tiles"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/WrathWall" to="PressurePlates/EndSwitchAndWrathPlate" method="_on_pressure_plate_pushed"]
 [connection signal="set_tile" from="MoveableWalls/WrathWall" to="." method="_on_Wall_set_tiles"]
-[connection signal="pressure_plate_pushed" from="MoveableWalls/MainWall" to="PressurePlates/MainWallPalte1" method="_on_pressure_plate_pushed"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/MainWall" to="PressurePlates/MainWallPlate2" method="_on_pressure_plate_pushed"]
+[connection signal="pressure_plate_pushed" from="MoveableWalls/MainWall" to="PressurePlates/MainWallPalte1" method="_on_pressure_plate_pushed"]
 [connection signal="set_tile" from="MoveableWalls/MainWall" to="." method="_on_Wall_set_tiles"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/EndWall" to="PressurePlates/EndWallPlate" method="_on_pressure_plate_pushed"]
 [connection signal="set_tile" from="MoveableWalls/EndWall" to="." method="_on_Wall_set_tiles"]
@@ -438,8 +435,6 @@ blend_times = [  ]
 [connection signal="body_entered" from="Areas/SecretSpeech" to="Areas/SecretSpeech" method="_on_body_entered"]
 [connection signal="body_entered" from="Areas/ImageSwitch" to="Areas/ImageSwitch" method="_on_body_entered"]
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
-[connection signal="player_moved" from="Player" to="Audio" method="_on_Player_player_moved"]
 [connection signal="player_moved" from="Player" to="Wrath" method="update_goal"]
 [connection signal="player_talks" from="Player" to="UI" method="set_text"]
 [connection signal="stamina_changed" from="Player" to="UI" method="_on_Player_stamina_changed"]
-[connection signal="wrath_moved" from="Wrath" to="Audio" method="_on_Wrath_wrath_moved"]
