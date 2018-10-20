@@ -19,3 +19,7 @@ func _on_End_pressed():
 
 func _on_New_Game_pressed():
 	globals.goto_next_floor()
+
+
+func _on_Instructions_pressed():
+	globals.goto_credits()

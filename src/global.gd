@@ -33,6 +33,9 @@ func reset_game():
 func goto_main_menu():
 	reset_game()
 	goto_scene("res://ui/MainMenu.tscn")
+	
+func goto_credits():
+	goto_scene("res://ui/Credits.tscn")
 
 func goto_next_floor():
 	if(stages.size() > stage):
