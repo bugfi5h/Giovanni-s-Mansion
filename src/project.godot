@@ -23,6 +23,7 @@ config/icon="res://assets/images/icon.png"
 
 globals="*res://global.gd"
 MansionAudioPlayer="*res://audio/MansionAudioPlayer.tscn"
+SoundEffects="*res://audio/SoundEffects.tscn"
 
 [display]
 

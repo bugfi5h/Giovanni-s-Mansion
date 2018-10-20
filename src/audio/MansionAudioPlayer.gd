@@ -17,6 +17,8 @@ func _ready():
 	lvl2_player.set_volume_db(-100)
 	lvl3_player.set_volume_db(-100)
 	
+	_stop_playback()
+	
 	get_node("/root/globals").connect("scene_changed", self, "_on_scene_changed")
 #	playerPosition = Vector2()
 #	wrathPosition = Vector2()
@@ -27,10 +29,26 @@ func _on_scene_changed(new_scene):
 	connect_player_and_wrath(new_scene)
 	
 
+func _stop_playback():
+	print("playback stopped")
+	lvl1_player.stop()
+	lvl2_player.stop()
+	lvl3_player.stop()
+
+func _start_playback():
+	print("playback started")
+	lvl1_player.play()
+	lvl2_player.play()
+	lvl3_player.play()
+
 func connect_player_and_wrath(scene):
 	var player = scene.find_node("Player")
 	if player != null:
 		player.connect("player_moved", self, "_on_Player_player_moved")
+		if  !lvl1_player.playing:
+			_start_playback()
+	else:
+		_stop_playback()
 	var wrath = scene.find_node("Wrath")
 	if wrath != null:
 		wrath.connect("wrath_moved", self, "_on_Wrath_wrath_moved")
