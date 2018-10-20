@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://maps/level_4/level_4.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/PathMap/NavigationMap.tres" type="TileSet" id=2]
@@ -13,8 +13,9 @@
 [ext_resource path="res://environment/Stairs.tscn" type="PackedScene" id=11]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=13]
-[ext_resource path="res://ui/UI.tscn" type="PackedScene" id=14]
-[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/images/light.png" type="Texture" id=14]
+[ext_resource path="res://ui/UI.tscn" type="PackedScene" id=15]
+[ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=16]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -333,7 +334,6 @@ position = Vector2( -218, -330 )
 lamp_oil_amount = 15
 
 [node name="Areas" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 584, 440 )
 
 [node name="SecretSpeech" type="Area2D" parent="Areas"]
@@ -346,13 +346,14 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 9 )
-message = ""
+message = "Ohhh... a secret!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/SecretSpeech"]
 position = Vector2( 515, 511 )
 shape = SubResource( 4 )
 
 [node name="ImageSwitch" type="Area2D" parent="Areas"]
+position = Vector2( 13, 1 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -397,9 +398,34 @@ format = 1
 tile_data = PoolIntArray( 786447, 41, 0, 786448, 41, 0, 786449, 41, 0, 786450, 41, 0, 786451, 41, 0, 786452, 41, 0, 786453, 41, 0, 786454, 41, 0, 786455, 41, 0, 786456, 41, 0, 786457, 41, 0, 786458, 41, 0, 786459, 41, 0, 786460, 41, 0, 786461, 41, 0, 786462, 41, 0, 786463, 41, 0, 786464, 41, 0, 786465, 41, 0, 786466, 41, 0, 786467, 41, 0, 786468, 41, 0, 786469, 41, 0, 786470, 41, 0, 786471, 41, 0, 786472, 41, 0, 786473, 41, 0, 786474, 41, 0, 786475, 41, 0, 786476, 41, 0, 786477, 41, 0, 786478, 41, 0, 786479, 41, 0, 786480, 41, 0, 786481, 41, 0, 786482, 41, 0, 786483, 17, 0, 786488, 38, 0, 786489, 41, 0, 786490, 41, 0, 786491, 41, 0, 786492, 27, 0, 851983, 32, 0, 851984, 32, 0, 851985, 32, 0, 851986, 32, 0, 851987, 32, 0, 851988, 32, 0, 851989, 32, 0, 851990, 32, 0, 851991, 32, 0, 851992, 32, 0, 851993, 32, 0, 851994, 32, 0, 851995, 32, 0, 851996, 32, 0, 851997, 32, 0, 851998, 32, 0, 851999, 32, 0, 852000, 32, 0, 852001, 32, 0, 852002, 32, 0, 852003, 32, 0, 852004, 32, 0, 852005, 32, 0, 852006, 32, 0, 852007, 32, 0, 852008, 32, 0, 852009, 32, 0, 852010, 32, 0, 852011, 32, 0, 852012, 32, 0, 852013, 32, 0, 852014, 32, 0, 852015, 32, 0, 852016, 32, 0, 852017, 32, 0, 852018, 32, 0, 852019, 29, 0, 852024, 36, 0, 852025, 31, 0, 852026, 32, 0, 852027, 32, 0, 852028, 29, 0, 917519, 32, 0, 917520, 32, 0, 917521, 32, 0, 917522, 32, 0, 917523, 32, 0, 917524, 32, 0, 917525, 32, 0, 917526, 32, 0, 917527, 32, 0, 917528, 32, 0, 917529, 32, 0, 917550, 38, 0, 917551, 41, 0, 917552, 41, 0, 917553, 41, 0, 917554, 41, 0, 917555, 27, 0, 1179678, 37, 0, 1245214, 37, 0, 1310745, 30, 0, 1310746, 41, 0, 1310747, 41, 0, 1310748, 41, 0, 1310749, 41, 0, 1310750, 37, 0, 1376281, 28, 0, 1376282, 32, 0, 1376283, 32, 0, 1376284, 32, 0, 1376285, 32, 0, 1376295, 38, 0, 1376296, 41, 0, 1376297, 41, 0, 1376298, 41, 0, 1376299, 41, 0, 1376300, 41, 0, 1376301, 41, 0, 1376302, 41, 0, 1376303, 41, 0, 1376304, 42, 0, 1376308, 40, 0, 1376309, 41, 0, 1376310, 41, 0, 1376311, 41, 0, 1376312, 27, 0, 1441832, 32, 0, 1441833, 32, 0, 1441834, 32, 0, 1441835, 24, 0, 1441836, 32, 0, 1441837, 32, 0, 1441838, 32, 0, 1441839, 32, 0, 1441840, 29, 0, 1441844, 28, 0, 1441845, 32, 0, 1441846, 32, 0, 1441847, 32, 0, 1441848, 29, 0, 1507358, 26, 0, 1507359, 41, 0, 1507360, 41, 0, 1507361, 41, 0, 1507362, 41, 0, 1507363, 41, 0, 1507364, 41, 0, 1507365, 41, 0, 1507366, 41, 0, 1507367, 27, 0, 1572894, 14, 0, 1572895, 32, 0, 1572896, 32, 0, 1572897, 32, 0, 1572898, 32, 0, 1572899, 32, 0, 1572900, 32, 0, 1572901, 32, 0, 1572902, 32, 0, 1572903, 15, 0, 1638430, 14, 0, 1638431, 33, 0, 1638432, 33, 0, 1638433, 33, 0, 1638434, 33, 0, 1638435, 33, 0, 1638436, 33, 0, 1638437, 33, 0, 1638438, 33, 0, 1638439, 15, 0, 2031659, 26, 0, 2031660, 41, 0, 2031661, 41, 0, 2031662, 41, 0, 2031663, 41, 0, 2031664, 41, 0, 2031665, 41, 0, 2031666, 41, 0, 2031667, 41, 0, 2097175, 41, 0, 2097176, 41, 0, 2097177, 41, 0, 2097178, 41, 0, 2097179, 41, 0, 2097180, 41, 0, 2097181, 41, 0, 2097182, 41, 0, 2097183, 41, 0, 2097184, 41, 0, 2097185, 41, 0, 2097186, 41, 0, 2097187, 41, 0, 2097188, 41, 0, 2097189, 41, 0, 2097190, 41, 0, 2097191, 41, 0, 2097195, 14, 0, 2097196, 32, 0, 2097197, 32, 0, 2097198, 32, 0, 2097199, 32, 0, 2097200, 32, 0, 2097201, 32, 0, 2097202, 32, 0, 2097203, 32, 0, 2162711, 32, 0, 2162712, 32, 0, 2162713, 32, 0, 2162714, 32, 0, 2162715, 9, 0, 2162716, 32, 0, 2162717, 25, 0, 2162718, 9, 0, 2162719, 32, 0, 2162720, 32, 0, 2162721, 32, 0, 2162722, 32, 0, 2162723, 32, 0, 2162724, 32, 0, 2162725, 32, 0, 2162726, 32, 0, 2162727, 32, 0, 2162731, 14, 0, 2162732, 33, 0, 2162733, 33, 0, 2162734, 33, 0, 2162735, 33, 0, 2162736, 33, 0, 2162737, 33, 0, 2162738, 33, 0, 2162739, 31, 0, 2162740, 37, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="UI" parent="." instance=ExtResource( 14 )]
+[node name="Light2D" type="Light2D" parent="Roof"]
+position = Vector2( 485.375, 317 )
+scale = Vector2( 0.0108332, 0.1 )
+enabled = true
+editor_only = false
+texture = ExtResource( 14 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
 
-[node name="PauseScreen" parent="." instance=ExtResource( 15 )]
+[node name="UI" parent="." instance=ExtResource( 15 )]
+
+[node name="PauseScreen" parent="." instance=ExtResource( 16 )]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 6 )
@@ -422,8 +448,8 @@ blend_times = [  ]
 [connection signal="set_tile" from="MoveableWalls/EndSwitchWall" to="." method="_on_Wall_set_tiles"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/WrathWall" to="PressurePlates/EndSwitchAndWrathPlate" method="_on_pressure_plate_pushed"]
 [connection signal="set_tile" from="MoveableWalls/WrathWall" to="." method="_on_Wall_set_tiles"]
-[connection signal="pressure_plate_pushed" from="MoveableWalls/MainWall" to="PressurePlates/MainWallPlate2" method="_on_pressure_plate_pushed"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/MainWall" to="PressurePlates/MainWallPalte1" method="_on_pressure_plate_pushed"]
+[connection signal="pressure_plate_pushed" from="MoveableWalls/MainWall" to="PressurePlates/MainWallPlate2" method="_on_pressure_plate_pushed"]
 [connection signal="set_tile" from="MoveableWalls/MainWall" to="." method="_on_Wall_set_tiles"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/EndWall" to="PressurePlates/EndWallPlate" method="_on_pressure_plate_pushed"]
 [connection signal="set_tile" from="MoveableWalls/EndWall" to="." method="_on_Wall_set_tiles"]
@@ -433,7 +459,9 @@ blend_times = [  ]
 [connection signal="pressure_plate_pushed" from="PressurePlates/MainWallPalte1" to="MoveableWalls/MainWall" method="_on_pressure_plate_pushed"]
 [connection signal="pressure_plate_pushed" from="PressurePlates/MainWallPlate2" to="MoveableWalls/MainWall" method="_on_pressure_plate_pushed"]
 [connection signal="body_entered" from="Areas/SecretSpeech" to="Areas/SecretSpeech" method="_on_body_entered"]
+[connection signal="send_text_to_player" from="Areas/SecretSpeech" to="Player" method="on_player_talks"]
 [connection signal="body_entered" from="Areas/ImageSwitch" to="Areas/ImageSwitch" method="_on_body_entered"]
+[connection signal="change_image" from="Areas/ImageSwitch" to="." method="change_image"]
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
 [connection signal="player_moved" from="Player" to="Wrath" method="update_goal"]
 [connection signal="player_talks" from="Player" to="UI" method="set_text"]
