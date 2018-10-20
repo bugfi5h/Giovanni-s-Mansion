@@ -20,13 +20,13 @@ func _ready():
         current_scene = root.get_child(root.get_child_count() -1)
 
 func get_display_stage_level():
+	var visible_stage = stage +1
 	return String(stage + 1)
 
 func get_current_scene():
 	return current_scene
 
 func game_over():
-	reset_game()
 	emit_signal("game_over")
 	goto_scene("res://ui/GameOver.tscn")
 
