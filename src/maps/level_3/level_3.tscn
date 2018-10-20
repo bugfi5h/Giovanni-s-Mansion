@@ -901,12 +901,12 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="MoveableWalls" type="Node2D" parent="."]
 
-[node name="MoveableWall2" parent="MoveableWalls" instance=ExtResource( 12 )]
+[node name="FirstWall Right" parent="MoveableWalls" instance=ExtResource( 12 )]
 _sections_unfolded = [ "Transform", "Visibility" ]
 moving_dir = 3
 movement_in_px = 32
 
-[node name="TileMap" type="TileMap" parent="MoveableWalls/MoveableWall2"]
+[node name="TileMap" type="TileMap" parent="MoveableWalls/FirstWall Right"]
 mode = 0
 tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
@@ -926,11 +926,11 @@ format = 1
 tile_data = PoolIntArray( 393234, 41, 0, 393235, 41, 0, 393236, 41, 0, 393237, 41, 0, 393238, 41, 0, 393239, 41, 0, 393240, 42, 0, 458770, 32, 0, 458771, 32, 0, 458772, 32, 0, 458773, 32, 0, 458774, 32, 0, 458775, 32, 0, 458776, 13, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="MoveableWall" parent="MoveableWalls" instance=ExtResource( 12 )]
+[node name="SecondWall Top" parent="MoveableWalls" instance=ExtResource( 12 )]
 _sections_unfolded = [ "Transform", "Visibility" ]
 movement_in_px = 48
 
-[node name="TileMap" type="TileMap" parent="MoveableWalls/MoveableWall"]
+[node name="TileMap" type="TileMap" parent="MoveableWalls/SecondWall Top"]
 mode = 0
 tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
@@ -950,12 +950,13 @@ format = 1
 tile_data = PoolIntArray( 131095, 37, 0, 196631, 37, 0, 262167, 37, 0, 327703, 37, 0, 393239, 37, 0, 458775, 37, 0, 524311, 37, 0, 589847, 37, 0, 655383, 37, 0, 720919, 37, 0, 786455, 35, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="MoveableWall3" parent="MoveableWalls" instance=ExtResource( 12 )]
+[node name="Secret" parent="MoveableWalls" instance=ExtResource( 12 )]
 _sections_unfolded = [ "Transform", "Visibility" ]
 moving_dir = 3
-movement_in_px = 32
+movement_in_px = 64
+movement_duration = 0.4
 
-[node name="TileMap" type="TileMap" parent="MoveableWalls/MoveableWall3"]
+[node name="TileMap" type="TileMap" parent="MoveableWalls/Secret"]
 mode = 0
 tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
@@ -975,22 +976,22 @@ format = 1
 tile_data = PoolIntArray( 327709, 41, 0, 327710, 41, 0, 327711, 41, 0, 393245, 31, 0, 393246, 32, 0, 393247, 33, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="MoveableWalls/MoveableWall3"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="MoveableWalls/Secret"]
 occluder = SubResource( 22 )
 light_mask = 1
 
 [node name="Plates" type="Node2D" parent="."]
 position = Vector2( 331.359, 231.045 )
 
-[node name="PressurePlate" parent="Plates" instance=ExtResource( 13 )]
+[node name="FirstWall Right" parent="Plates" instance=ExtResource( 13 )]
 position = Vector2( 12.641, 0 )
 only_activation = false
 
-[node name="PressurePlate2" parent="Plates" instance=ExtResource( 13 )]
+[node name="SecondWall Top" parent="Plates" instance=ExtResource( 13 )]
 position = Vector2( -19.359, -174.045 )
 only_activation = true
 
-[node name="PressurePlate3" parent="Plates" instance=ExtResource( 13 )]
+[node name="Secret" parent="Plates" instance=ExtResource( 13 )]
 position = Vector2( 268.992, -175.563 )
 only_activation = true
 
@@ -1036,10 +1037,15 @@ light_mask = 1
 [node name="Stairs" parent="." instance=ExtResource( 19 )]
 position = Vector2( 568, 23 )
 
-[connection signal="set_tile" from="MoveableWalls/MoveableWall2" to="." method="_on_Wall_set_tiles"]
-[connection signal="pressure_plate_pushed" from="Plates/PressurePlate" to="MoveableWalls/MoveableWall2" method="_on_pressure_plate_pushed"]
-[connection signal="pressure_plate_pushed" from="Plates/PressurePlate2" to="MoveableWalls/MoveableWall" method="_on_pressure_plate_pushed"]
-[connection signal="pressure_plate_pushed" from="Plates/PressurePlate3" to="MoveableWalls/MoveableWall3" method="_on_pressure_plate_pushed"]
+[connection signal="pressure_plate_pushed" from="MoveableWalls/FirstWall Right" to="Plates/FirstWall Right" method="_on_pressure_plate_pushed"]
+[connection signal="set_tile" from="MoveableWalls/FirstWall Right" to="." method="_on_Wall_set_tiles"]
+[connection signal="pressure_plate_pushed" from="MoveableWalls/SecondWall Top" to="Plates/SecondWall Top" method="_on_pressure_plate_pushed"]
+[connection signal="set_tile" from="MoveableWalls/SecondWall Top" to="." method="_on_Wall_set_tiles"]
+[connection signal="pressure_plate_pushed" from="MoveableWalls/Secret" to="Plates/Secret" method="_on_pressure_plate_pushed"]
+[connection signal="set_tile" from="MoveableWalls/Secret" to="." method="_on_Wall_set_tiles"]
+[connection signal="pressure_plate_pushed" from="Plates/FirstWall Right" to="MoveableWalls/FirstWall Right" method="_on_pressure_plate_pushed"]
+[connection signal="pressure_plate_pushed" from="Plates/SecondWall Top" to="MoveableWalls/SecondWall Top" method="_on_pressure_plate_pushed"]
+[connection signal="pressure_plate_pushed" from="Plates/Secret" to="MoveableWalls/Secret" method="_on_pressure_plate_pushed"]
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
 [connection signal="player_talks" from="Player" to="UI" method="set_text"]
 [connection signal="stamina_changed" from="Player" to="UI" method="_on_Player_stamina_changed"]
