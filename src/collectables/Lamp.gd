@@ -1,5 +1,7 @@
 extends Node2D
 
+signal collected()
+
 export(int) var lamp_oil_amount = 1
 var already_collected = false
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +15,7 @@ func collected():
 	$Label.text = "+" + String(lamp_oil_amount)
 	$lamp.hide()
 	$AnimationPlayer.play("Collected")
+	emit_signal("collected")
 
 func _on_Area2D_body_entered(body):
 	if !already_collected:

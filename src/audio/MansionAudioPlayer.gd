@@ -19,7 +19,9 @@ func _ready():
 	
 	_stop_playback()
 	
-	get_node("/root/globals").connect("scene_changed", self, "_on_scene_changed")
+	var globals = get_node("/root/globals")
+	globals.connect("scene_changed", self, "_on_scene_changed")
+	_on_scene_changed(globals.current_scene)
 #	playerPosition = Vector2()
 #	wrathPosition = Vector2()
 
