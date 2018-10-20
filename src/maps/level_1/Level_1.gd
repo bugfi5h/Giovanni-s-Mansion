@@ -8,7 +8,6 @@ var introduction_texts = [
 	"How the hell did I get here?",
 	"I have absolutly no idea what happened last night.",
 	"Damn alcohol! I shouldn't have trusted that cat....",
-	"...",
 	"Well let's find out what this place is. Looks a bit... shadowy..."
 ]
 var current_text = 0
