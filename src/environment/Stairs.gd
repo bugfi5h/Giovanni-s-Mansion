@@ -1,8 +1,7 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal player_uses_stairs()
+
 var player_class = preload("res://characters/player/Player.gd")
 var globals
 # Called when the node enters the scene tree for the first time.
@@ -17,3 +16,4 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body is player_class:
 		globals.goto_next_floor()
+		emit_signal("player_uses_stairs")

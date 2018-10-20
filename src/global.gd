@@ -5,6 +5,7 @@ extends Node
 # var b = "text"
 
 signal scene_changed(new_scene)
+signal game_over()
 
 var player_oil = 100
 var player_stamina = 100
@@ -21,8 +22,12 @@ func _ready():
 func get_display_stage_level():
 	return String(stage + 1)
 
+func get_current_scene():
+	return current_scene
+
 func game_over():
 	reset_game()
+	emit_signal("game_over")
 	goto_scene("res://ui/GameOver.tscn")
 
 func reset_game():
@@ -33,6 +38,9 @@ func reset_game():
 func goto_main_menu():
 	reset_game()
 	goto_scene("res://ui/MainMenu.tscn")
+	
+func goto_credits():
+	goto_scene("res://ui/Credits.tscn")
 
 func goto_next_floor():
 	if(stages.size() > stage):
