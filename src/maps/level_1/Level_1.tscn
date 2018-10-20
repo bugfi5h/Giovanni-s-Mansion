@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://maps/level_1/Level_1.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/PathMap/NavigationMap.tres" type="TileSet" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/PauseScreen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://audio/MansionAudioPlayer.tscn" type="PackedScene" id=10]
-[ext_resource path="res://characters/enemies/Wrath.tscn" type="PackedScene" id=11]
+[ext_resource path="res://audio/SoundEffects.tscn" type="PackedScene" id=11]
+[ext_resource path="res://environment/Stairs.tscn" type="PackedScene" id=12]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -112,6 +113,7 @@ occluder = SubResource( 1 )
 light_mask = 1
 
 [node name="MoveableWalls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="MoveableWall_1" parent="MoveableWalls" instance=ExtResource( 5 )]
 movement_in_px = 32
@@ -191,18 +193,18 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="AudioPlayer" parent="." instance=ExtResource( 10 )]
 
-[node name="Wrath" parent="." instance=ExtResource( 11 )]
-position = Vector2( 559, 358 )
-speed = 50
-should_follow_player = false
+[node name="SoundEffects" parent="." instance=ExtResource( 11 )]
+
+[node name="Stairs" parent="." instance=ExtResource( 12 )]
+position = Vector2( 839.814, 41.2976 )
 
 [connection signal="let_Player_talk" from="." to="UI" method="set_text"]
 [connection signal="set_Player_inputIsEnabled" from="." to="Player" method="_set_inputIsEnabled"]
+[connection signal="wall_ended_moving" from="MoveableWalls/MoveableWall_1" to="SoundEffects" method="_stop_move_wall"]
+[connection signal="wall_starts_moving" from="MoveableWalls/MoveableWall_1" to="SoundEffects" method="_play_move_wall"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/PressurePlate" to="MoveableWalls/MoveableWall_1" method="_on_pressure_plate_pushed"]
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
 [connection signal="player_moved" from="Player" to="AudioPlayer" method="_on_Player_player_moved"]
-[connection signal="player_moved" from="Player" to="Wrath" method="update_goal"]
 [connection signal="player_talks" from="Player" to="UI" method="set_text"]
 [connection signal="stamina_changed" from="Player" to="UI" method="_on_Player_stamina_changed"]
 [connection signal="dialogue_animation_finished" from="UI" to="." method="_on_previous_animation_finished"]
-[connection signal="wrath_moved" from="Wrath" to="AudioPlayer" method="_on_Wrath_wrath_moved"]

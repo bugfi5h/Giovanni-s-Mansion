@@ -9,6 +9,8 @@ enum Direction{
 
 signal set_tile(coordinates, id)
 signal pressure_plate_pushed(is_pushed_in)
+signal wall_starts_moving()
+signal wall_ended_moving()
 var used_cells
 
 func _ready():
@@ -46,6 +48,7 @@ func move_wall(is_pushed_in):
 	clear_occupied_coords()
 	$Tween.interpolate_property($".","position",position, new_pos, movement_duration, Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
 	$Tween.start()
+	emit_signal("wall_starts_moving")
 
 func get_moving_dir(is_pushed_in):
 	var dir = moving_dir
@@ -66,4 +69,5 @@ func _on_pressure_plate_pushed(is_pushed_in):
 	
 func _on_Tween_tween_completed(object, key):
 	set_occupied_coords()
+	emit_signal("wall_ended_moving")
 
