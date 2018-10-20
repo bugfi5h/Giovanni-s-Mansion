@@ -193,6 +193,7 @@ position = Vector2( 839.814, 41.2976 )
 
 [connection signal="let_Player_talk" from="." to="UI" method="set_text"]
 [connection signal="set_Player_inputIsEnabled" from="." to="Player" method="_set_inputIsEnabled"]
+[connection signal="pressure_plate_pushed" from="MoveableWalls/MoveableWall_1" to="MoveableWalls/PressurePlate" method="_on_pressure_plate_pushed"]
 [connection signal="pressure_plate_pushed" from="MoveableWalls/PressurePlate" to="MoveableWalls/MoveableWall_1" method="_on_pressure_plate_pushed"]
 [connection signal="lamp_health_changed" from="Player" to="UI" method="_on_Player_lamp_health_changed"]
 [connection signal="player_talks" from="Player" to="UI" method="set_text"]
